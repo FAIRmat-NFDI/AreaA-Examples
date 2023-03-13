@@ -1,0 +1,72 @@
+definitions:
+  name: My Custom Schemas
+  sections:
+    MySubstrate:
+      base_sections: 
+        - nomad.datamodel.data.EntryData
+      quantities:
+        lab_id:
+          type: str
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+              label: Substrate ID
+        material:
+          type: str
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        datetime:
+          type: Datetime
+          m_annotations:
+            eln:
+              component: DateTimeEditQuantity
+              label: Date received
+        doping_type:
+          type:
+            type_kind: Enum
+            type_data:
+              - 'n'
+              - 'p'
+              - 'none'
+          m_annotations:
+            eln:
+              component: RadioEnumEditQuantity
+        doping:
+          type: np.float64
+          unit: ohm*cm
+          description: The doping of the substrate measured as the electrical resistivity.
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+        description:
+          type: str
+          m_annotations:
+            eln: 
+              component: RichTextEditQuantity
+              label: Comment
+      sub_sections:
+        dimensions:
+          section:
+            quantities:
+              length:
+                type: np.float64
+                unit: mm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: mm
+              width:
+                type: np.float64
+                unit: mm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: mm
+              height:
+                type: np.float64
+                unit: mm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: mm

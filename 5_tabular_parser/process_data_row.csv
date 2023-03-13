@@ -1,0 +1,8 @@
+sample_id,roughness,thickness,notes
+my_sample_1,4,34,measurement was ok
+AA_20_03_23,5,42,tip broke
+my_ID,12,30,"ok, too rough"
+my_ID_2,3,50,ok
+my_ID_2_1,20,51,anomalous roughness
+IKZ_16_01_21,3,30,ok
+sample_cut_1,5,29,pk

@@ -1,0 +1,81 @@
+definitions:
+  name: My Custom Schemas
+  sections:
+    MyProcessColumn:
+      base_sections: 
+        - nomad.datamodel.metainfo.eln.BasicEln
+      m_annotations:
+        plot:
+          - label: Temperature
+            x: process_time
+            y: 
+              - temperature
+              - set_temperature
+      quantities:
+        data_file:
+          type: str
+          m_annotations:
+            browser:
+              adaptor: RawFileAdaptor
+            eln:
+              component: FileEditQuantity
+        process_time:
+          type: np.float64
+          shape: ['*']
+          unit: s
+        temperature:
+          type: np.float64
+          shape: ['*']
+          unit: K
+        set_temperature:
+          type: np.float64
+          shape: ['*']
+          unit: K
+    MyProcessRow:
+      base_sections: 
+        - nomad.datamodel.metainfo.eln.BasicEln
+      quantities:
+        data_file:
+          type: str
+          m_annotations:
+            browser:
+              adaptor: RawFileAdaptor
+            eln:
+              component: FileEditQuantity
+      sub_sections:
+        MyProcessesCollection:
+          repeats: true
+          section:
+            more:
+              label_quantity: sample_id
+            quantities:
+              sample_id:
+                type: str
+                m_annotations:
+                  eln:
+                    component: StringEditQuantity
+              roughness:
+                type: np.float64
+                unit: nm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: nm
+              thickness:
+                type: np.float64
+                unit: nm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: nm 
+    MyOverallProcess:
+      base_sections:
+        - nomad.datamodel.metainfo.eln.BasicEln
+      m_annotations:
+        eln:
+      sub_sections:
+        Process1:
+          section: '#/MyProcessColumn'
+        Process2:
+          section: '#/MyProcessRow'
+  
