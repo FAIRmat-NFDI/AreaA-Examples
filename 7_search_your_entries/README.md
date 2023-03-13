@@ -4,11 +4,11 @@ In this tutorial we show you how to serach for the entries that you generate by 
 
 ## Prerequisites
 
-If did the previous parts, you will be able to continue to search your entries in our NOMAD instalations. For this tutorial we used the [NOMAD (beta) page](https://nomad-lab.eu/prod/v1/staging/gui/search/entries). do nto forget to login to see the entries in your unplished uploads!
+If did the previous parts, you will be able to continue to search your entries in our NOMAD installations. For this tutorial we used the [NOMAD (beta) page](https://nomad-lab.eu/prod/v1/staging/gui/search/entries). Do not forget to login to see the entries in your unpublished uploads!
 
 ## Further Documentation
 In this part, we will look at how we can search for our ELN entries in NOMAD.
-Before starting I would like to point you to two tutorial videos that we did in the past related to general search in NOMAD:
+Before starting, it is worth checking two tutorial videos that we did in the past related to general search in NOMAD:
 - 🔍Exploring your data with NOMAD: https://www.youtube.com/watch?v=38S2U-TIvxE
 - 🤖Using NOMAD's API: https://www.youtube.com/watch?v=G1frBCrxC0g
 
@@ -21,15 +21,14 @@ If you have been following the previous parts, now it is time to search for the 
 1. 🔍Go to the [EXPLORE/ELN page](https://nomad-lab.eu/prod/v1/staging/gui/search/eln).
 2. Search your entries by finding yourself as an author. For this you can just type your name in the main search bar, or in the left filter panel under the **Author / Origin / Dataset** section. 
 ![image](https://user-images.githubusercontent.com/64071335/224764102-ebd116f1-6990-456a-85f6-0d7281e56d6d.png) 
-*TIP: if you click in the `+` button next to authors, you will bring the widget to the central dashboard and will be able to see see the authors there.* 
-4. Go to the **User Defined Quantities** section in the left filter panel. 
-Remember! You can look for your custom defined quantities here as long as they are single values (such as single strings or single numbers). This feature is new and we have plans to improve it further in the future.
+*TIP: if you click in the `+` button next to authors, you will bring the widget to the central dashboard and will be able to see the authors there.* 
+3. Go to the **User Defined Quantities** section in the left filter panel. 
+Keep in mind that you can look for your custom defined quantities here as long as they are single values (such as strings or scalars). This feature is new and we have plans to improve it further in the future.
 ![image](https://user-images.githubusercontent.com/64071335/224765740-91ffbea3-a2e1-4ba3-8591-9616b03b0e35.png)
-	- Serach for your quantity path
+	- Search for your quantity path
 	- Use the different operator fuction **OP** accoridng to what you want to search (`>`, `<`, `=`).
-	- You can change the unit in numerical values by typing, for example from `m` to `nm`.
-	- Combine multiple serach by adding then together wuth the **ADD** button.
+	- You can change the unit in numerical values by typing, e. g., from `m` to `nm`.
+	- Combine multiple search by adding then together with the **ADD** button.
 	- Click on **Update Search** to update the search.
-1. Additional quantities related to the ELN can be found in the **Electronic Lab Notebook** section, for exmaple the `Lab ID`. This will get populated if you are using the ELN `base_sections` in your schemas. 
+4. Additional quantities related to the ELN can be found in the **Electronic Lab Notebook** section, for exmaple the `Lab ID`. This will get populated if you are using the ELN `base_sections` in your schemas. 
  
-
