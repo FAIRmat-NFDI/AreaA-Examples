@@ -1,8 +1,3 @@
-Exercise:
-
-- 
-- 
-
 # Part 5: Reading Files with the Tabular Parser and Adding Plots
 
 In this tutorial we show you how to decorate your schema to allow the parsing of csv and xlsx spreadsheet files into Nomad.
