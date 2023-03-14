@@ -9,14 +9,9 @@ In this part of the tutorial we will guide you through your first steps in NOMAD
 
 ## Flow
 
-1. Show how to create an account and how to login
-2. Walk through the different tabs and highlight
-3. Creating an eln entry
-4. Browse through the created entry
-5. Back to the overview page
-   - Buttons for refreshing, reprocessing and adding of collaborateurs
+1. [Navigate to NOMAD beta and log in](https://scribehow.com/shared/Login_and_create_an_ELN_entry_in_NOMAD__pLmbHrFeTD-iauxqfjxfZg
+)
    
-https://scribehow.com/shared/Login_and_create_an_ELN_entry_in_NOMAD__pLmbHrFeTD-iauxqfjxfZg
 
 ## What you should have at the end of this part
 
