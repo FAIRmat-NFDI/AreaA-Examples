@@ -5,23 +5,21 @@ definitions:
       base_sections: 
         - nomad.datamodel.data.EntryData
       quantities:
-        lab_id:
+        id:
           type: str
           m_annotations:
             eln:
               component: StringEditQuantity
-              label: Substrate ID
         material:
           type: str
           m_annotations:
             eln:
               component: StringEditQuantity
-        datetime:
+        date_received:
           type: Datetime
           m_annotations:
             eln:
               component: DateTimeEditQuantity
-              label: Date received
         doping_type:
           type:
             type_kind: Enum
@@ -39,12 +37,11 @@ definitions:
           m_annotations:
             eln:
               component: NumberEditQuantity
-        description:
+        comment:
           type: str
           m_annotations:
             eln: 
               component: RichTextEditQuantity
-              label: Comment
       sub_sections:
         dimensions:
           section:
