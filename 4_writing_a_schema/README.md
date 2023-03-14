@@ -17,9 +17,9 @@ a custom Electronic Lab Notebook (ELN).
 
 1. Extend the YAML file (`my_schema.schema.archive.yaml`) we wrote during the tutorial 
 with a string quantity `name`.
-2. Login and create a new upload on the nomad beta server 
+2. Login on the nomad beta server
 ([nomad-lab.eu/prod/v1/staging](https://nomad-lab.eu/prod/v1/staging/gui/about/information)) 
-under the "Publish/uploads" menu.
+and open your upload from part 3 under the "Publish/uploads" menu.
 3. Upload the modified YAML file and make sure it is processed successfully.
 4. Create an instance of `MySubstrate` using the "Create Entry" button and check that the 
 new `name` quantity is there.
