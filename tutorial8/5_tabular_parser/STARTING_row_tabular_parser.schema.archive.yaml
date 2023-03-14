@@ -20,7 +20,7 @@ definitions:
                 - MyProcessesCollection
       sub_sections:
         MyProcessesCollection:
-          repeats: true
+          repeats: true # important: allows to create multiple instances within the GUI
           section:
             more:
               label_quantity: sample_id
