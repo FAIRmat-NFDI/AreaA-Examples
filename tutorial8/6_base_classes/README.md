@@ -27,3 +27,11 @@ section definition.
 7. Add the substance you created as a reference for the substrate material.
 8. *In case of time: Add a SampleID subsection, reupload, reprocess and generate a 
 SampleID.*
+
+## What you should have at the end of this part
+
+- A modified YAML file containing a custom ELN schema definition for a `MySubstrate` section and a `MySubstance` section
+- A reference quanitity in the `MySubstrate` section of type `MySubstance`
+- An entry of type `MySubstance`
+- An entry of type `MySubstrate` with a reference to the `MySubstance` entry
+- A basic understanding of base classes and references in the NOMAD ELN
