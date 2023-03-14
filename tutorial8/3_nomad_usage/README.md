@@ -9,8 +9,8 @@ In this part of the tutorial we will guide you through your first steps in NOMAD
 
 ## Flow
 
-1. [Navigate to NOMAD beta and log in](https://scribehow.com/shared/Login_and_create_an_ELN_entry_in_NOMAD__pLmbHrFeTD-iauxqfjxfZg
-)
+Here is a [scribe](https://scribehow.com/shared/Login_and_create_an_ELN_entry_in_NOMAD__pLmbHrFeTD-iauxqfjxfZg
+) which shows how to find NOMAD and how to create a basic eln entry.
    
 
 ## What you should have at the end of this part
