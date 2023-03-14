@@ -25,3 +25,9 @@ and open your upload from part 3 under the "Publish/uploads" menu.
 new `name` quantity is there.
 5. *In case of time: Add more quantities using the edit quantities found on 
 [nomad-lab.eu/prod/v1/staging/gui/dev/editquantity](https://nomad-lab.eu/prod/v1/staging/gui/dev/editquantity)*
+
+## What you should have at the end of this part
+
+- A YAML file containing a custom ELN schema definition with a `MySubstrate` section containing a string quantity `name`
+- The YAML definition file sucessfully uploaded and parsed in your upload from part 3
+- An entry of type `MySubstrate`
