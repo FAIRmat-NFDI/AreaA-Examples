@@ -1,9 +1,9 @@
 definitions:
-  name: My Custom Schemas
+  name: Mixed tabular parser
   sections:
     MyProcessColumn:
       base_sections: 
-        - nomad.datamodel.metainfo.eln.BasicEln
+        - nomad.datamodel.metainfo.eln.ElnBaseSection
         - nomad.parsing.tabular.TableData
       m_annotations:
         plot:
@@ -21,7 +21,7 @@ definitions:
             eln:
               component: FileEditQuantity
             tabular_parser:
-              sep: ','  
+              # sep: ',' # only needed for csv files  
               comment: '#'
               mode: column
         process_time:
@@ -30,14 +30,14 @@ definitions:
           unit: s
           m_annotations:
             tabular:
-              name: process_time
+              name: column_data/process_time
         temperature:
           type: np.float64
           shape: ['*']
           unit: K
           m_annotations:
             tabular:
-              name: meas_temp
+              name: column_data/meas_temp
             plot:
               label: Temperature
               x: process_time
@@ -48,10 +48,10 @@ definitions:
           unit: K
           m_annotations:
             tabular:
-              name: set_temp
+              name: column_data/set_temp
     MyProcessRow:
       base_sections: 
-        - nomad.datamodel.metainfo.eln.BasicEln
+        - nomad.datamodel.metainfo.eln.ElnBaseSection
         - nomad.parsing.tabular.TableData
       quantities:
         data_file:
@@ -62,7 +62,7 @@ definitions:
             eln:
               component: FileEditQuantity
             tabular_parser:
-              sep: ','  
+              # sep: ',' # only needed for csv files 
               comment: '#'
               mode: row
               target_sub_section:
@@ -80,7 +80,7 @@ definitions:
                   eln:
                     component: StringEditQuantity
                   tabular:
-                    name: sample_id
+                    name: row_data/sample_id
               roughness:
                 type: np.float64
                 unit: nm
@@ -89,7 +89,7 @@ definitions:
                     component: NumberEditQuantity
                     defaultDisplayUnit: nm
                   tabular:
-                    name: roughness
+                    name: row_data/roughness
               thickness:
                 type: np.float64
                 unit: nm
@@ -98,17 +98,4 @@ definitions:
                     component: NumberEditQuantity
                     defaultDisplayUnit: nm 
                   tabular:
-                    name: thickness
-    MyOverallProcess:
-      base_sections:
-        - nomad.datamodel.metainfo.eln.BasicEln
-      m_annotations:
-        eln:
-      sub_sections:
-        Process1:
-          section: '#/MyProcessColumn'
-        Process2:
-          section: '#/MyProcessRow'
-
-      
-     
+                    name: row_data/thickness

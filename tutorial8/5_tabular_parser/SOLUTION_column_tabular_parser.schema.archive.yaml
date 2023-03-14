@@ -1,0 +1,51 @@
+definitions:
+  name: Column tabular parser
+  sections:
+    MyProcessColumn:
+      base_sections: 
+        - nomad.datamodel.metainfo.eln.BasicEln
+        - nomad.parsing.tabular.TableData
+      m_annotations:
+        plot:
+          - label: Temperature
+            x: process_time
+            y: 
+              - temperature
+              - set_temperature
+      quantities:
+        data_file:
+          type: str
+          m_annotations:
+            browser:
+              adaptor: RawFileAdaptor
+            eln:
+              component: FileEditQuantity
+            tabular_parser:
+              # sep: ',' # only needed for csv files  
+              comment: '#'
+              mode: column
+        process_time:
+          type: np.float64
+          shape: ['*']
+          unit: s
+          m_annotations:
+            tabular:
+              name: column_data/process_time
+        temperature:
+          type: np.float64
+          shape: ['*']
+          unit: K
+          m_annotations:
+            tabular:
+              name: column_data/meas_temp
+            plot:
+              label: Temperature
+              x: process_time
+              y: temperature
+        set_temperature:
+          type: np.float64
+          shape: ['*']
+          unit: K
+          m_annotations:
+            tabular:
+              name: column_data/set_temp

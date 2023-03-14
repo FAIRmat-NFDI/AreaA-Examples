@@ -1,0 +1,47 @@
+definitions:
+  name: Row tabular parser
+  sections:
+    MyProcessRow:
+      base_sections: 
+        - nomad.datamodel.metainfo.eln.BasicEln
+      quantities:
+        data_file:
+          type: str
+          m_annotations:
+            browser:
+              adaptor: RawFileAdaptor
+            eln:
+              component: FileEditQuantity
+            tabular_parser:
+              # sep: ',' # only needed for csv files 
+              comment: '#'
+              mode: row
+              target_sub_section:
+                - MyProcessesCollection
+      sub_sections:
+        MyProcessesCollection:
+          repeats: true
+          section:
+            more:
+              label_quantity: sample_id
+            quantities:
+              sample_id:
+                type: str
+                m_annotations:
+                  eln:
+                    component: StringEditQuantity
+              roughness:
+                type: np.float64
+                unit: nm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: nm
+              thickness:
+                type: np.float64
+                unit: nm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: nm 
+                    

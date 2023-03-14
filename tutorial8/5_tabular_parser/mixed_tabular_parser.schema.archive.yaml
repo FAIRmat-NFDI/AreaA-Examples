@@ -1,9 +1,9 @@
 definitions:
-  name: My Custom Schemas
+  name: Mixed tabular parser
   sections:
     MyProcessColumn:
       base_sections: 
-        - nomad.datamodel.metainfo.eln.BasicEln
+        - nomad.datamodel.metainfo.eln.ElnBaseSection
         - nomad.parsing.tabular.TableData
       m_annotations:
         plot:
@@ -12,20 +12,17 @@ definitions:
             y: 
               - temperature
               - set_temperature
-          - label: My_test_plot
-            x: process_time
-            y: 
-              - test_quantity
       quantities:
         data_file:
           type: str
+          default: '#data/data_file' # only needed to link the MyOverallProcess data_file
           m_annotations:
             browser:
               adaptor: RawFileAdaptor
             eln:
               component: FileEditQuantity
             tabular_parser:
-              sep: ','  
+              # sep: ',' # only needed for csv files  
               comment: '#'
               mode: column
         process_time:
@@ -34,14 +31,14 @@ definitions:
           unit: s
           m_annotations:
             tabular:
-              name: process_time
+              name: column_data/process_time
         temperature:
           type: np.float64
           shape: ['*']
           unit: K
           m_annotations:
             tabular:
-              name: meas_temp
+              name: column_data/meas_temp
             plot:
               label: Temperature
               x: process_time
@@ -52,28 +49,22 @@ definitions:
           unit: K
           m_annotations:
             tabular:
-              name: set_temp
-        test_quantity:
-          type: np.float64
-          shape: ['*']
-          unit: minute
-          m_annotations:
-            tabular:
-              name: test_quantity
+              name: column_data/set_temp
     MyProcessRow:
       base_sections: 
-        - nomad.datamodel.metainfo.eln.BasicEln
+        - nomad.datamodel.metainfo.eln.ElnBaseSection
         - nomad.parsing.tabular.TableData
       quantities:
         data_file:
           type: str
+          default: '#data/data_file' # only needed to link the MyOverallProcess data_file
           m_annotations:
             browser:
               adaptor: RawFileAdaptor
             eln:
               component: FileEditQuantity
             tabular_parser:
-              sep: ','  
+              # sep: ',' # only needed for csv files 
               comment: '#'
               mode: row
               target_sub_section:
@@ -91,7 +82,7 @@ definitions:
                   eln:
                     component: StringEditQuantity
                   tabular:
-                    name: sample_id
+                    name: row_data/sample_id
               roughness:
                 type: np.float64
                 unit: nm
@@ -100,7 +91,7 @@ definitions:
                     component: NumberEditQuantity
                     defaultDisplayUnit: nm
                   tabular:
-                    name: roughness
+                    name: row_data/roughness
               thickness:
                 type: np.float64
                 unit: nm
@@ -109,17 +100,27 @@ definitions:
                     component: NumberEditQuantity
                     defaultDisplayUnit: nm 
                   tabular:
-                    name: thickness
+                    name: row_data/thickness
     MyOverallProcess:
       base_sections:
         - nomad.datamodel.metainfo.eln.BasicEln
+        - nomad.parsing.tabular.TableData
       m_annotations:
         eln:
+      quantities:
+        data_file:
+          type: str
+          m_annotations:
+            browser:
+              adaptor: RawFileAdaptor
+            eln:
+              component: FileEditQuantity
+            tabular_parser:
+              # sep: ',' # only needed for csv files  
+              comment: '#'
+              mode: root
       sub_sections:
         Process1:
           section: '#/MyProcessColumn'
         Process2:
           section: '#/MyProcessRow'
-
-      
-     

@@ -1,0 +1,26 @@
+definitions:
+  name: Column tabular parser
+  sections:
+    MyProcessColumn:
+      base_sections: 
+        - nomad.datamodel.metainfo.eln.BasicEln
+      quantities:
+        data_file:
+          type: str
+          m_annotations:
+            browser:
+              adaptor: RawFileAdaptor
+            eln:
+              component: FileEditQuantity
+        process_time:
+          type: np.float64
+          shape: ['*']
+          unit: s
+        temperature:
+          type: np.float64
+          shape: ['*']
+          unit: K
+        set_temperature:
+          type: np.float64
+          shape: ['*']
+          unit: K
