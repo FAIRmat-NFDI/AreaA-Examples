@@ -8,8 +8,9 @@ This is a reporitory to support the [FAIRmat tutorial 8](https://www.fairmat-nfd
 
 If you have question, get stuck or want to discuss we have opened a topic about **Schemas for ELNs** in the [NOMAD MATSCI forum](https://matsci.org/t/schemas-for-elns/47504). Dopr your comments there, and we will try our best to help you. 
 
-The file [full_upload.zip](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8/1_introduction) is a reprduction of the work done in the tutorials until part 6. If you could not do it by yourself or you simply want to compare, just drop the file in an upload following [these steps](https://scribehow.com/shared/How_to_Upload_a_New_File_on_NOMAD_Lab__lCn0OUdET6S4-Y2SEAQVzQ).
+The file [full_upload.zip](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8/1_introduction) is a reproduction of the work done in the tutorial. If you could not do it by yourself or you simply want to compare, just drop the file in an upload following [these steps](https://scribehow.com/shared/How_to_Upload_a_New_File_on_NOMAD_Lab__lCn0OUdET6S4-Y2SEAQVzQ).
 
+## Outline
 1. 📝 [Introduction](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8/1_introduction)
 2. 📚 [Vocabulary and Key Concepts](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8/2_vocabulary_key_concepts)
 3. 💻 [NOMAD usage](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8/3_nomad_usage)
