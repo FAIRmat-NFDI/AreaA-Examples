@@ -1,0 +1,99 @@
+definitions:
+  name: 'A test ELN for user meeting 16.11.23'
+  sections:
+    TemperatureRamp:
+      m_annotations:
+        eln: 
+          properties:
+            order: 
+              - "name"
+              - "start_time"
+              - "initial_temperature"
+              - "final_temperature"
+              - "duration"
+              - "comment"
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.ProcessStep
+      quantities:
+        initial_temperature:
+          type: np.float64
+          unit: celsius
+          description: "initial temperature set for ramp"
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+              defaultDisplayUnit: celsius
+        final_temperature:
+          type: np.float64
+          unit: celsius
+          description: "final temperature set for ramp"
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+              defaultDisplayUnit: celsius
+    Sintering:
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.Process
+        - nomad.datamodel.data.EntryData
+      sub_sections:
+        steps:
+          repeats: True
+          section: '#/TemperatureRamp'
+    XRDmeasurementResults:
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.MeasurementResult
+        - nomad.datamodel.metainfo.plot.PlotSection
+        - nomad.parsing.tabular.TableData
+      m_annotations:
+        eln:
+        plotly_graph_object:
+        - data:
+            x: '#two_theta'
+            y: '#intensity'
+          layout:
+            title:
+              text: '2Theta scan'
+          label: '2Theta scan'
+          index: 1
+      quantities:
+        data_file:
+          type: str
+          description: "Upload here the spreadsheet file containing the XRD data"
+          m_annotations:
+            tabular_parser:
+              parsing_options:
+                comment: '#'
+              mapping_options:
+              - mapping_mode: column
+                file_mode: current_entry
+                sections:
+                - '#root' #results
+            browser:
+              adaptor: RawFileAdaptor
+            eln:
+              component: FileEditQuantity
+        two_theta:
+          type: np.float64
+          unit: degree
+          shape: ['*']
+          description: "2theta"
+          m_annotations:
+            tabular:
+              name: two_theta
+        intensity:
+          type: np.float64
+          shape: ['*']
+          description: "Counts per second"
+          m_annotations:
+            tabular:
+              name: CPS
+    XRDmeasurement:
+      m_annotations:
+        eln:
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.Measurement
+        - nomad.datamodel.data.EntryData
+      sub_sections:
+        results:
+          repeats: True
+          section: '#/XRDmeasurementResults'
