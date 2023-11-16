@@ -134,6 +134,19 @@ class XRDmeasurementResults(
                 },
                 "label": "2Theta scan",
                 "index": 1
+            },
+            {
+                "data": {
+                    "x": "#q",
+                    "y": "#intensity"
+                },
+                "layout": {
+                    "title": {
+                        "text": "Scattering vector"
+                    }
+                },
+                "label": "Scattering vector",
+                "index": 1
             }
         ],)
     data_file = Quantity(
@@ -158,6 +171,20 @@ class XRDmeasurementResults(
         },
         a_eln={
             "component": "FileEditQuantity"
+        },
+    )
+    q = Quantity(
+        type=np.float64,
+        description='Scattering vector',
+        unit="meter**(-1)",
+        shape=["*"],
+    )
+    wavelength = Quantity(
+        type=np.float,
+        unit="meter",
+        a_eln={
+            "component": "NumberEditQuantity",
+            "defaultDisplayUnit": "angstrom",
         },
     )
     two_theta = Quantity(
@@ -188,6 +215,8 @@ class XRDmeasurementResults(
             logger (BoundLogger): A structlog logger.
         '''
         super(XRDmeasurementResults, self).normalize(archive, logger)
+        if self.two_theta is not None and self.wavelength is not None:
+            self.q = (4 * np.pi / self.wavelength) * np.sin(np.deg2rad(self.two_theta) / 2)
 
 
 class XRDmeasurement(Measurement, EntryData, ArchiveSection):
