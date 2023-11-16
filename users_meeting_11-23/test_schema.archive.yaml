@@ -1,5 +1,5 @@
 definitions:
-  name: 'A test ELN for user meeting 16.11.23'
+  name: 'User Meeting Test ELN'
   sections:
     TemperatureRamp:
       m_annotations:

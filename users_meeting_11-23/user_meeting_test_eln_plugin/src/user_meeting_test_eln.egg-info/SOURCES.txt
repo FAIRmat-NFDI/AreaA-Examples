@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/user_meeting_test_eln/__init__.py
+src/user_meeting_test_eln/schema.py
+src/user_meeting_test_eln.egg-info/PKG-INFO
+src/user_meeting_test_eln.egg-info/SOURCES.txt
+src/user_meeting_test_eln.egg-info/dependency_links.txt
+src/user_meeting_test_eln.egg-info/requires.txt
+src/user_meeting_test_eln.egg-info/top_level.txt
+tests/test_schema.py
