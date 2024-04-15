@@ -1,6 +1,6 @@
 # Abstract Tutorial 13
 
-* **Title**: 
+* **Title**: (select one or provide better title)
   * FAIRmat Tutorial 13: Utilizing NOMAD for Experimental Data Management in Synthesis
   * FAIRmat Tutorial 13: Mastering NOMAD for Experimental Materials Science Data"
   
