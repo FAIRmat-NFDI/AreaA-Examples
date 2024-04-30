@@ -187,7 +187,7 @@ definitions:
 
 We can grab this file from the tutorial repository using curl
 ```sh
-curl -L -o sintering.archive.yaml "https://github.com/AreaA-Examples/raw/main/tutorial13/part3/files/sintering.archive.yaml"
+curl -L -o sintering.archive.yaml "https://raw.githubusercontent.com/FAIRmat-NFDI/AreaA-Examples/main/tutorial13/part3/files/sintering.archive.yaml"
 ```
 
 
