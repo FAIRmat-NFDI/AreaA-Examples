@@ -1,0 +1,41 @@
+definitions:
+  name: 'Tutorial 13 sintering schema'
+  sections:
+    TemperatureRamp:
+      m_annotations:
+        eln: 
+          properties:
+            order: 
+              - "name"
+              - "start_time"
+              - "initial_temperature"
+              - "final_temperature"
+              - "duration"
+              - "comment"
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.ProcessStep
+      quantities:
+        initial_temperature:
+          type: np.float64
+          unit: celsius
+          description: "initial temperature set for ramp"
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+              defaultDisplayUnit: celsius
+        final_temperature:
+          type: np.float64
+          unit: celsius
+          description: "final temperature set for ramp"
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+              defaultDisplayUnit: celsius
+    Sintering:
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.Process
+        - nomad.datamodel.data.EntryData
+      sub_sections:
+        steps:
+          repeats: True
+          section: '#/TemperatureRamp'

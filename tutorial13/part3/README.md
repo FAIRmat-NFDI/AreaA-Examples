@@ -128,14 +128,68 @@ sh CHANGE_TO_PLUGIN_NAME/move_template_files.sh
 > [!IMPORTANT]
 > The `CHANGE_TO_PLUGIN_NAME` should be substituted by the name of the plugin you've created. In the above case it'll be `sh nomad-awesome-tools/move_template_files.sh`. 
 
-Finally, we should commit the changes we have made:
+Finally, we should add the files we created to git and commit the changes we have made:
 ```sh
+git add -A
 git commit -m "Generated plugin from cookiecutter template"
+git push
 ```
 
 ## 3. Importing a yaml schema
 
 ### 3.1 The schema
+We will now convert the yaml schema package from part 2 where we described a sintering
+step:
+
+```yml
+definitions:
+  name: 'Tutorial 13 sintering schema'
+  sections:
+    TemperatureRamp:
+      m_annotations:
+        eln: 
+          properties:
+            order: 
+              - "name"
+              - "start_time"
+              - "initial_temperature"
+              - "final_temperature"
+              - "duration"
+              - "comment"
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.ProcessStep
+      quantities:
+        initial_temperature:
+          type: np.float64
+          unit: celsius
+          description: "initial temperature set for ramp"
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+              defaultDisplayUnit: celsius
+        final_temperature:
+          type: np.float64
+          unit: celsius
+          description: "final temperature set for ramp"
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+              defaultDisplayUnit: celsius
+    Sintering:
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.Process
+        - nomad.datamodel.data.EntryData
+      sub_sections:
+        steps:
+          repeats: True
+          section: '#/TemperatureRamp'
+```
+
+We can grab this file from the tutorial repository using curl
+```sh
+curl -L -o sintering.archive.yaml "https://github.com/AreaA-Examples/raw/main/tutorial13/part3/files/sintering.archive.yaml"
+```
+
 
 ### 3.2 `metainfo-yaml2py`
 
