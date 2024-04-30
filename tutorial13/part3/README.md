@@ -16,6 +16,7 @@ There is a GitHub template repository that can be used for this at [github.com/F
 
 To use the template you should choose the "Create an new repository" option after pressing
 the green "Use this template" button in the upper right corner.
+Please note that you have to be logged into to GitHub to see this option.
 
 ![Use template](./images/use_template_dark.png#gh-dark-mode-only)
 ![Use template](./images/use_template_light.png#gh-light-mode-only)
