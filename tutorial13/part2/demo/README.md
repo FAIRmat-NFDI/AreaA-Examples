@@ -14,17 +14,19 @@ Follow these steps to create your upload.
 <iframe src="https://scribehow.com/embed/Create_new_Upload_on_NOMAD_Lab_Oasis_Platform__8n74Ia2KRS6813lZJ9hmtA" width="100%" height="600" allowfullscreen frameborder="0"></iframe>
 
 ## Add the Experiment and steps involved
-After you create an upload, we will create an entry using ExperimentELN. This will act as a container for all the steps involved. For our example, these steps are sintering and XRD measurement.
+After you create an upload, we will create an entry using ExperimentELN. This will act as a container for all the steps involved. For our example, these steps are sintering (Process) and XRD (Measurement).
 
-<iframe src="https://scribehow.com/embed/Create_Experimental_Schema_for_Sintering_Process__dWi9ZL2RS9mKJ1XPsL32XQ" width="100%" height="600" allowfullscreen frameborder="0"></iframe>
+<iframe src="https://scribehow.com/embed/Create_Experiment_ELN_for_Sintering_Process__dWi9ZL2RS9mKJ1XPsL32XQ" width="100%" height="600" allowfullscreen frameborder="0"></iframe>
 
 A graphical summary of our experiment is available in the `Overview > Workflow` section.
 
-## Specify the Process step
+## Add the Sample and Specify the Process step
 
-## Add the Sample
+<iframe src="https://scribehow.com/embed/Populate_Process_ELN_and_create_Sample_ELN__As9sadvhS4a979Cd7rOPyA" width="100%" height="600" allowfullscreen frameborder="0"></iframe>
 
 ## Specify the Measurement step
+
+<iframe src="https://scribehow.com/embed/Populating_ELN_Measurement__P21WfffiSZaRVTYpcjaVXQ" width="100%" height="600" allowfullscreen frameborder="0"></iframe>
 
 # Part 2.2: Customization of the ELNs
 The built-in ELNs are general schemas. They can be used for myriad types of processes and measurements. Owing to their simplicity, however, they can be limiting when specific schema requirements are available.
@@ -39,4 +41,8 @@ Using our sintering example, we will show how to specialize the process ELN with
 ## YAML schema
 Add reference to Tutorial 8.
 
+<iframe src="https://scribehow.com/embed/Create_Custom_Sintering_Process_Schema___uGkfGM-SziDbaiu9Ojpyg" width="100%" height="640" allowfullscreen frameborder="0"></iframe>
+
 ## XRD Plugin
+
+<iframe src="https://scribehow.com/embed/Create_XRD_Measurement_ELN_entry_using_plugin__CaFgPhKwTju8hjrSop9Vrg" width="100%" height="640" allowfullscreen frameborder="0"></iframe>
