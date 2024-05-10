@@ -193,6 +193,20 @@ curl -L -o sintering.archive.yaml "https://raw.githubusercontent.com/FAIRmat-NFD
 
 ### 3.2 `metainfo-yaml2py`
 
+We will now use an external package `metainfo-yaml2py` to convert the yaml schema package
+into python class definitions.
+First we install the package with `pip`:
+```sh
+pip install metainfo-yaml2py
+```
+
+Then we can run the `metainfo-yaml2py` command on the `sintering.archive.yaml` file
+and specify the output directory, with the `-o` flag, to be our `schema_packages`
+directory:
+```sh
+metainfo-yaml2py sintering.archive.yaml -o src/nomad_awesome_tool/schema_packages
+```
+
 ### 3.3 Updating __init__.py
 
 ## 4. Adding a normalizer
