@@ -1,5 +1,5 @@
 definitions:
-  name: 'Custom Schemas'
+  name: 'Tutorial 13 sintering schema'
   sections:
     TemperatureRamp:
       m_annotations:
