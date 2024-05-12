@@ -21,7 +21,8 @@ Please note that you have to be logged into to GitHub to see this option.
 ![Use template](./images/use_template_dark.png#gh-dark-mode-only)
 ![Use template](./images/use_template_light.png#gh-light-mode-only)
 
-Enter a name for your repository and click "Create Repository"
+Enter a name (I will use "nomad-sintering" for mine) for your repository and click
+"Create Repository".
 
 ## 2. Generate the plugin structure
 Next, we will use a cookiecutter template to create the basic structure of our NOMAD
@@ -67,54 +68,76 @@ The next step is to run cruft to use our cookiecutter template:
 ```sh
 cruft create https://github.com/FAIRmat-NFDI/cookiecutter-nomad-plugin
 ```
-Cookiecutter prompts you for information regarding your plugin:
+Cookiecutter prompts you for information regarding your plugin and I will enter the
+following for my example:
 
 ```no-highlight
-full_name [John Doe]: Citizen Kane
-email [john.doe@physik.hu-berlin.de]: citizen@kane.de
-github_username [foo]: kane
-plugin_name [foobar]: awesome-tools
-module_name [awesome_tools]: awesome_tools
-short_description [NOMAD example template]: An awesome plugin for NOMAD
-version [0.1.0]:
-Select license:
-1 - MIT
-2 - BSD-3
-3 - GNU GPL v3.0+
-Choose from 1, 2, 3 [1]: 2
-include_schema_package [y/n] (y): y
-include_normalizer [y/n] (y): n
-include_parser [y/n] (y): n
-include_app [y/n] (y): n
-
-INFO:post_gen_project:Initializing python for package - src
-..
-INFO:post_gen_project:Remove temporary folder: licenses
-INFO:post_gen_project:Remove temporary folder: macros
-INFO:post_gen_project:Remove temporary folder: py_sources
+  [1/12] full_name (John Doe): Hampus Näsström
+  [2/12] email (john.doe@physik.hu-berlin.de): hampus.naesstroem@physik.hu-berlin.de
+  [3/12] github_username (foo): hampusnasstrom
+  [4/12] plugin_name (foobar): sintering
+  [5/12] module_name (sintering): 
+  [6/12] short_description (Nomad example template): A schema package plugin for sintering.
+  [7/12] version (0.1.0): 
+  [8/12] Select license
+    1 - MIT
+    2 - BSD-3
+    3 - GNU GPL v3.0+
+    4 - Apache Software License 2.0
+    Choose from [1/2/3/4] (1): 
+  [9/12] include_schema_package [y/n] (y): y
+  [10/12] include_normalizer [y/n] (y): n
+  [11/12] include_parser [y/n] (y): n
+  [12/12] include_app [y/n] (y): n
 ```
 
 There you go - you just created a minimal NOMAD plugin:
 
 > [!NOTE]
-> In the above prompt, we pressed `y` for schema_package, this creates a python package with a plugin entry point for a schema package.
+> In the above prompt, we pressed `y` for schema_package, this creates a python package
+with a plugin entry point for a schema package.
 
 ```no-highlight
-nomad-awesome-tools/
+nomad-sintering/
 ├── LICENSE
-├── README.rst
-├── pyproject.toml
+├── MANIFEST.in
+├── README.md
+├── docs
+│   ├── assets
+│   │   ├── favicon.png
+│   │   └── nomad-plugin-logo.png
+│   ├── explanation
+│   │   └── explanation.md
+│   ├── how_to
+│   │   ├── contribute_to_the_documentation.md
+│   │   ├── contribute_to_this_plugin.md
+│   │   ├── install_this_plugin.md
+│   │   └── use_this_plugin.md
+│   ├── index.md
+│   ├── reference
+│   │   └── references.md
+│   ├── stylesheets
+│   │   └── extra.css
+│   ├── theme
+│   │   └── partials
+│   │       └── header.html
+│   └── tutorial
+│       └── tutorial.md
+├── mkdocs.yml
 ├── move_template_files.sh
+├── pyproject.toml
 ├── src
-│   └── nomad_awesome_tools
+│   └── nomad_sintering
 │       ├── __init__.py
-|       └── schema_packages
+│       └── schema_packages
 │           ├── __init__.py
-│           └── plugin.py
-├── tests
-│   ├── conftest.py
-│   └── test_awesome.py
-└── MANIFEST.in
+│           └── mypackage.py
+└── tests
+    ├── conftest.py
+    ├── data
+    │   └── test.archive.yaml
+    └── schema_packages
+        └── test_schema.py
 ```
 
 > [!NOTE]
@@ -126,7 +149,7 @@ sh CHANGE_TO_PLUGIN_NAME/move_template_files.sh
 ```
 
 > [!IMPORTANT]
-> The `CHANGE_TO_PLUGIN_NAME` should be substituted by the name of the plugin you've created. In the above case it'll be `sh nomad-awesome-tools/move_template_files.sh`. 
+> The `CHANGE_TO_PLUGIN_NAME` should be substituted by the name of the plugin you've created. In the above case it'll be `sh nomad-sintering/move_template_files.sh`. 
 
 Finally, we should add the files we created to git and commit the changes we have made:
 ```sh
@@ -135,9 +158,28 @@ git commit -m "Generated plugin from cookiecutter template"
 git push
 ```
 
-## 3. Importing a yaml schema
+## 3. Setting up python
 
-### 3.1 The schema
+### 3.1 Creating a virtual environment
+Before we can start developing we recommend to create a virtual environment using Python 3.9
+
+```sh
+python3.9 -m venv .pyenv
+source .pyenv/bin/activate
+```
+
+### 3.2 Installing the plugin
+Next we should install our plugin package in editable mode and using the nomad package
+index
+
+```sh
+pip install --upgrade pip
+pip install -e '.[dev]' --index-url https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple
+```
+
+## 4. Importing a yaml schema
+
+### 4.1 The schema
 We will now convert the yaml schema package from part 2 where we described a sintering
 step:
 
@@ -191,50 +233,66 @@ curl -L -o sintering.archive.yaml "https://raw.githubusercontent.com/FAIRmat-NFD
 ```
 
 
-### 3.2 `metainfo-yaml2py`
+### 4.2 `metainfo-yaml2py`
 
 We will now use an external package `metainfo-yaml2py` to convert the yaml schema package
 into python class definitions.
 First we install the package with `pip`:
 ```sh
-pip install metainfo-yaml2py
+pip install metainfoyaml2py
 ```
 
-Then we can run the `metainfo-yaml2py` command on the `sintering.archive.yaml` file
+Then we can run the `metainfo-yaml2py` command on the `sintering.archive.yaml` file with
+the `-n` flag for adding `normalize()` functions (will be explained later)
 and specify the output directory, with the `-o` flag, to be our `schema_packages`
 directory:
 ```sh
-metainfo-yaml2py sintering.archive.yaml -o src/nomad_awesome_tool/schema_packages
+metainfo-yaml2py sintering.archive.yaml -o src/nomad_sintering/schema_packages -n
 ```
 
-### 3.3 Updating __init__.py
+### 4.3 Updating __init__.py
 
-## 4. Adding a normalizer
+The metadata of our package is defined in the `__init__.py` file and here we now need to
+add the sintering package that we just created.
+For a proper use case we should replace the templated `mypackage.py` but for now we will 
+just change the content of the load function on line 8-9 of `__init__.py` to:
 
-### 4.1 The use case
+```py
+    def load(self):
+        from nomad_sintering.schema_packages.sintering import m_package
+```
 
-### 4.2 Adding the code
+Before we continue, we should commit our changes to git:
+```sh
+git add -A
+git commit -m "Added sintering classes from yaml schema"
+git push
+```
 
-## 5. Testing
+## 5. Adding a normalize function
+
+Next we will add some functionality to our use case through a so called "normalize"
+function. This allows us to add functionality to our schemas via Python code.
+
+### 5.1 The use case
+
+For this tutorial we will assume that we have a recipe file for our hot plate that we will
+parse:
+```csv
+step_name, duration [min], ramp [K/min]
+heating, 30, 200
+hold, 60, 0
+cooling, 30, -200
+```
+
+### 5.2 Adding the code
+
+## 6. Running the normalize function
 
 ### 5.1 Create an archive.json file
 
 ### 5.2 Run the NOMAD CLI
 
-### 5.3 Add a test
-
-### 5.4 Run pytest
-
-## 6. Adding a plot (in case of time)
-
-### 6.1 Add the code
-
-### 6.2 Visualize the plot
-
-## 7. Exporting a yaml schema
-
-### 7.1 Convert to yaml schema
-
-### 7.2 Upload yaml schema to NOMAD
-
-### 7.3 Next step (part 4)
+```sh
+nomad parse tests/data/test.archive.yaml --show-archive > normalized.archive.json
+```
