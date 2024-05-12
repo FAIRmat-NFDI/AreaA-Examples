@@ -12,7 +12,7 @@ In this part of the tutorial you will learn how to create and develop a NOMAD pl
 
 > [!IMPORTANT] 
 > Several software development concepts are being used during this tutorial. 
-> A list of them is reported here after to provided further info on each of them:
+> A list is reported hereafter to provide further info on each of them:
 > * [what is Git](https://learn.microsoft.com/en-us/devops/develop/git/what-is-git)
 > * [what is VSCode, i. e., an Integrated Development Environment (IDE)](https://aws.amazon.com/what-is/ide/)
 > * [what is Pip](https://realpython.com/lessons/what-is-pip-overview/)
