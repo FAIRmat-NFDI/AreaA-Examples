@@ -16,6 +16,7 @@ In this part of the tutorial you will learn how to create and develop a NOMAD pl
 > * [what is Git](https://learn.microsoft.com/en-us/devops/develop/git/what-is-git)
 > * [what is VSCode, i. e., an Integrated Development Environment (IDE)](https://aws.amazon.com/what-is/ide/)
 > * [what is Pip](https://realpython.com/lessons/what-is-pip-overview/)
+> * [what is a Python virtual environment](https://realpython.com/python-virtual-environments-a-primer/#why-do-you-need-virtual-environments)
 > * [creating a Python package](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 > * [uploading a package to PyPI](https://www.freecodecamp.org/news/how-to-create-and-upload-your-first-python-package-to-pypi/)
 > * [what is cruft](https://cruft.github.io/cruft/)
@@ -186,6 +187,10 @@ index
 pip install --upgrade pip
 pip install -e '.[dev]' --index-url https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple
 ```
+
+> [!NOTE]
+> Until we have an official pypi NOMAD release with the latest NOMAD version, make sure to include NOMAD's internal package registry (e.g. via --index-url). The latest pypi package available today is version 1.2.2 and it misses some updates functional to this tutorial. 
+> In the future, when a newer release of `nomad-lab` will be available (> 1.2.2) you can omit the `--index-url`.
 
 ## 4. Importing a yaml schema
 
