@@ -31,7 +31,7 @@ The session is designed to serve various user groups, including standard users, 
   * **Part 2.** [NOMAD's BaseSections and Built-In Schemas](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part2) (for all users) [**Link to slides**]()
      * Base Sections: introduction to NOMAD's data model to ensure interoperability
      * Built-in ELNs: introduction to NOMAD's ELNs
-  * **Part 3.** [Customization - Schema and Plugin development for expiremental data in NOMAD:](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part3) (for data stewards/scientists and interested users)
+  * **Part 3.** [Customization - Schema and Plugin development for experimental data in NOMAD:](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part3) (for data stewards/scientists and interested users)
      * Custom yaml schema
      * NOMAD schema plugin
   * **Part 4.** [NOMAD Oasis - deploying your NOMAD plugins](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part4) (for system admins and data stewards/scientists)
