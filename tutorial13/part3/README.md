@@ -10,6 +10,16 @@ In this part of the tutorial you will learn how to create and develop a NOMAD pl
 - Basic understanding of Python
 - Basic understanding of NOMAD metainfo, see for example [tutorial 8](https://www.fairmat-nfdi.eu/events/fairmat-tutorial-8/tutorial-8-materials)
 
+> [!IMPORTANT] 
+> Several software development concepts are being used during this tutorial. 
+> A list is reported hereafter to provide further info on each of them:
+> * [what is Git](https://learn.microsoft.com/en-us/devops/develop/git/what-is-git)
+> * [what is VSCode, i. e., an Integrated Development Environment (IDE)](https://aws.amazon.com/what-is/ide/)
+> * [what is Pip](https://realpython.com/lessons/what-is-pip-overview/)
+> * [creating a Python package](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+> * [uploading a package to PyPI](https://www.freecodecamp.org/news/how-to-create-and-upload-your-first-python-package-to-pypi/)
+> * [what is cruft](https://cruft.github.io/cruft/)
+
 ## 1. Create a Git(Hub) repository
 Firstly, we recommend to use git to version control your NOMAD plugin.
 There is a GitHub template repository that can be used for this at [github.com/FAIRmat-NFDI/nomad-plugin-template](https://github.com/FAIRmat-NFDI/nomad-plugin-template).
