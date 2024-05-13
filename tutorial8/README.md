@@ -16,5 +16,5 @@ The file [full_upload.zip](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/m
 3. 💻 [NOMAD usage](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8/3_nomad_usage)
 4. 📝 [Writing a Custom Schema](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8/4_writing_a_schema)
 5. 📈 [Reading Files with the Tabular Parser and Adding Plots](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8/5_tabular_parser)
-6. 🔗 [Using Base Classes and References](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8/6_base_classes)
+6. 🔗 [Using Base Sections and References](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8/6_base_classes)
 7. 🔍 [Search your ELN Data](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8/7_search_your_entries) 

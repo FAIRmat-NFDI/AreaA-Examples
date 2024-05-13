@@ -18,9 +18,9 @@
 
 FAIRmat Tutorial 13, presented by FAIRmat Area A Synthesis, introduces NOMAD and NOMAD Oasis as essential tools for research data management (RDM). This tutorial will specifically demonstrate how to utilize these tools for managing experimental materials science data, with a particular focus on synthesis data.
 
-Participants will learn about NOMAD's versatile data model, which ensures data interoperability, and its various types and levels of schemas, including custom yaml schemas, community standards, plugins, and Base Sections. The tutorial will also cover the integration of NOMAD with Electronic Lab Notebooks (ELNs) to enhance data documentation and management.
+Participants will learn about NOMAD's versatile data model, which ensures data interoperability, and its various types and levels of schemas, including custom yaml schemas, community standards, plugins, and base sections. The tutorial will also cover the integration of NOMAD with Electronic Lab Notebooks (ELNs) to enhance data documentation and management.
 
-A practical session will guide users through a typical synthesis data example, demonstrating how to start from NOMAD's built-in ELNs, develop a data schema, convert it into a NOMAD plugin for automated data processing, and deploy the schema on a local NOMAD Oasis. This hands-on approach will provide invaluable insights into customizing NOMAD to fit specific experimental workflows.
+A practical session will guide users through a typical synthesis data example, demonstrating how to start from NOMAD's built-in schemas, develop a data schema, convert it into a NOMAD plugin for automated data processing, and deploy the schema on a local NOMAD Oasis. This hands-on approach will provide invaluable insights into customizing NOMAD to fit specific experimental workflows.
 
 The session is designed to serve various user groups, including standard users, data stewards & data scientists, and system administrators, ensuring that each participant gains a comprehensive understanding of the tool's capabilities and applications in their respective roles. Join us to explore how NOMAD can transform your approach to data management in experimental synthesis, leading to more efficient and coherent research outputs - FAIR principles in practice.
 
@@ -28,11 +28,11 @@ The session is designed to serve various user groups, including standard users, 
   * **Part 1.** [Introduction:](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part1) [**Link to slides**]()
      * user roles in NOMAD
      * overview on tutorial
-  * **Part 2.** [NOMAD's BaseSections and Built-In Schemas](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part2) (for all users) [**Link to slides**]()
+  * **Part 2.** [NOMAD's Base Sections and Built-in Schemas](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part2) (for all users) [**Link to slides**]()
      * Base Sections: introduction to NOMAD's data model to ensure interoperability
      * Built-in ELNs: introduction to NOMAD's ELNs
   * **Part 3.** [Customization - Schema and Plugin development for experimental data in NOMAD:](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part3) (for data stewards/scientists and interested users)
      * Custom yaml schema
      * NOMAD schema plugin
-  * **Part 4.** [NOMAD Oasis - deploying your NOMAD plugins](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part4) (for system admins and data stewards/scientists)
+  * **Part 4.** [NOMAD Oasis - deploying your NOMAD Plugins](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part4) (for system admins and data stewards/scientists)
 

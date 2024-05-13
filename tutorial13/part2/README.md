@@ -1,11 +1,11 @@
-# Part 2: NOMAD's BaseSections and Built-in Electronic Lab Notebooks (ELNs)
+# Part 2: NOMAD's Base Sections and Built-in Schemas for Electronic Lab Notebooks (ELNs)
 
 ## Prerequisites
 We will work on the [NOMAD example oasis](https://nomad-lab.eu/prod/v1/oasis/gui/search/entries).
 Make sure you have your NOMAD account ready to work on the example oasis.
 
-# 2.1: Using Built-In ELN Classes
-In NOMAD, you can structure and save your experimental data using Built-In ELN schemas
+# 2.1: Using Built-in ELN Schemas
+In NOMAD, you can structure and save your experimental data using built-in schemas
 prepared to have ready-to-use ELNs functionalities.
 
 This tutorial guides you through some of these schemas using an example from sintering.
@@ -72,7 +72,7 @@ linked with both measurement and process.
 <iframe src="https://scribehow.com/embed/Populating_ELN_Measurement__P21WfffiSZaRVTYpcjaVXQ" width="80%" height="600" allowfullscreen frameborder="0"></iframe>
 
 # 2.2: Customization of the ELNs
-The built-in ELN Classes are general schemas. They can be used for myriad types of processes
+The built-in schemas are general base sections. They can be used for myriad types of processes
 and measurements. Owing to their simplicity, however, they can be limiting in case of
 specific schema requirements.
 
@@ -87,7 +87,7 @@ Measurement ELN.
 
 ## YAML schema
 We will use a custom YAML schema to define `TemperatureRamp` section which inherits
-`ProcessStep` basesection and adds two new quantities: `Initial Temperature` and 
+`ProcessStep` base section and adds two new quantities: `Initial Temperature` and 
 `Final Temperature`. We also define `Sintering` section which uses `TemperatureRamp` to
 define its steps.
 
