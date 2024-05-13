@@ -17,9 +17,29 @@ the green "Use this template" button in the upper right corner.
 Please note that you have to be logged into to GitHub to see this option.
 
 ## 2. Add the plugin
-TBA
+We will now add the plugin we developed in part 3.
+To do this we need to add the following line to the `plugins.txt` file:
+```
+git+https://github.com/hampusnasstrom/nomad-sintering.git
+```
 
-## 3. Run the OASIS
+We can do this directly from the GitHub web UI.
+Once this is saved, a workflow will run to create the image.
+
+## 3. Update permissions
+Before we can pull the newly created image we need to provide access rights to it.
+There are two option:
+1. Make the image public
+2. Create a Personal Access Token (PAT)
+
+For this tutorial we will use the first option.
+If you prefer to keep your image private you read about how to setup a PAT
+[here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-with-a-personal-access-token-classic).
+
+To do this we should navigate to the package (in the right panel of the UI) and set it to
+public.
+
+## 4. Run the OASIS
 1. Make sure you have [docker](https://docs.docker.com/engine/install/) installed.
 Docker nowadays comes with `docker compose` built in. Prior, you needed to
 install the stand-alone [docker-compose](https://docs.docker.com/compose/install/).
