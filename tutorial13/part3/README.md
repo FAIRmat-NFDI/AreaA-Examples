@@ -260,16 +260,41 @@ directory:
 metainfo-yaml2py sintering.archive.yaml -o src/nomad_sintering/schema_packages -n
 ```
 
-### 4.3 Updating __init__.py
+### 4.3 Updating __init__.py and pyproject.toml
 
 The metadata of our package is defined in the `__init__.py` file and here we now need to
 add the sintering package that we just created.
-For a proper use case we should replace the templated `mypackage.py` but for now we will 
-just change the content of the load function on line 8-9 of `__init__.py` to:
+If we take a look in that file we can see an example created by the cookiecutter template.
+We can go ahead and copy the `MySchemaPackageEntryPoint` class and the `mypackage`
+instance and paste them below.
+We then need to change:
+1. the name of the class,
+2. the import in the load function to import our sintering schema package,
+3. the name of the instance and the class it uses,
+4. ideally we should also update the description and the name.
+
+The changes could look something like this:
 
 ```py
+class SinteringEntryPoint(SchemaPackageEntryPoint):
+
     def load(self):
         from nomad_sintering.schema_packages.sintering import m_package
+ 
+        return m_package
+
+
+sintering = SinteringEntryPoint(
+    name='Sintering',
+    description='Schema package for describing a sintering process.',
+)
+```
+
+Finally, we also need to add our new entry point to the `pyproject.toml`.
+At the bottom of the toml you will see how this was done for the example and we just need
+to replicate that with whatever we called our instance:
+```toml
+sintering = "nomad_sintering.schema_packages:sintering"
 ```
 
 Before we continue, we should commit our changes to git:
@@ -442,3 +467,9 @@ To view the output you can open and inspect the `normalized.archive.json` file.
 ### 5.3 Next steps
 In the next part of the tutorial we will show how you can deploy your own NOMAD Oasis with
 the plugin you just developed.
+Before we move one we should make sure that we have commited our changes to git:
+```sh
+git add -A
+git commit -m "Added a normalize function to the Sintering schema"
+git push
+```
