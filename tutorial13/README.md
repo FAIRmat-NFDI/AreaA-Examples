@@ -9,11 +9,11 @@
 * **Registration**: https://events.fairmat-nfdi.eu/event/18/
 
 * **Contact:** 
-- sebastian.brueckner@physik.hu-berlin.de
-- sarthak.kapoor@physik.hu-berlin.de
-- hampus.naesstroem@physik.hu-berlin.de
-- andrea.albino@physik.hu-berlin.de
-- fairmat-events@physik.hu-berlin.de
+   - sebastian.brueckner@physik.hu-berlin.de
+   - sarthak.kapoor@physik.hu-berlin.de
+   - hampus.naesstroem@physik.hu-berlin.de
+   - andrea.albino@physik.hu-berlin.de
+   - fairmat-events@physik.hu-berlin.de
 
 
 FAIRmat Tutorial 13, presented by FAIRmat Area A Synthesis, introduces NOMAD and NOMAD Oasis as essential tools for research data management (RDM). This tutorial will specifically demonstrate how to utilize these tools for managing experimental materials science data, with a particular focus on synthesis data.
