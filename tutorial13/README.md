@@ -36,3 +36,98 @@ The session is designed to serve various user groups, including standard users, 
      * NOMAD schema plugin
   * **Part 4.** [NOMAD Oasis - deploying your NOMAD Plugins](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part4) (for system admins and data stewards/scientists)
 
+---
+
+# Glossary
+
+This glossary provides definitions for key terms used in this project. Understanding these terms will help you navigate and use the project more effectively.
+
+### NOMAD and NOMAD Oasis
+**NOMAD (Novel Materials Discovery)**: A repository and data management platform for materials science data.  
+**NOMAD Oasis**: A customizable version of the NOMAD repository that can be deployed and managed independently by organizations or research groups.
+
+### GitHub
+A web-based platform used for version control and collaborative software development. It uses Git for managing changes to the source code and provides additional features for project management and collaboration.
+
+### Git
+A distributed version control system that tracks changes in source code during software development. It allows multiple developers to work on a project simultaneously, managing code changes and versions efficiently.
+
+### GitHub Codespace
+A cloud-based development environment provided by GitHub. It allows developers to code, build, and debug directly in the cloud without needing to set up a local development environment.
+
+### Data Schema
+A structured framework or blueprint that defines the organization, structure, and constraints of data. It is commonly used in databases and data modeling to describe the format and relationships of data elements.
+
+### Data Model
+An abstract representation of the data structures and relationships used within a database or information system. It serves as a blueprint for designing and implementing a database.
+
+### Template
+A predefined format or layout that serves as a starting point for creating new documents or files. Templates ensure consistency and standardization across multiple instances of a document or file type.
+
+### Quantity
+A measurable amount or number that defines some attribute or property of an entity or dataset in data management.
+
+### Sections and Subsections
+Structural elements used to organize content within a document or dataset. Sections provide high-level organization, while subsections offer more detailed breakdowns within each section.
+
+### Parser
+A software component that reads and interprets data, converting it from one format to another. Parsers are used to process input data and extract meaningful information for further use.
+
+### Normalizer
+A tool or process that transforms data into a standardized format. Normalization ensures consistency and comparability across different datasets and systems.
+
+### RDM (Research Data Management)
+Refers to the organization, storage, preservation, and sharing of data collected and used during a research project. Effective RDM ensures that data is accurate, accessible, and reusable.
+
+### ELN (Electronic Lab Notebook)
+A digital platform for documenting research processes, experiments, and results. ELNs enhance data organization, sharing, and collaboration in scientific research.
+
+### FAIR Data
+Principles that stand for Findable, Accessible, Interoperable, and Reusable. These principles guide the management and sharing of data to ensure that it can be easily discovered, accessed, integrated, and reused by others.
+
+### Repository
+A centralized location where data, code, or other digital assets are stored and managed. In the context of GitHub and Git, a repository is a project space where all files, including their history and versions, are kept.
+
+### Software Image
+A file that contains a copy of the operating system and installed software, often used for deployment and replication of software environments.
+
+### Software Plugin
+A set of software components that adds specific capabilities to an existing computer program. Plugins enable customization and enhance the functionality of the main application.
+
+### Python
+A high-level, interpreted programming language known for its simplicity and readability. It is widely used for web development, data analysis, scientific computing, artificial intelligence, and more.
+
+### Classes
+In Python, a class is a blueprint for creating objects. Classes define the properties and behaviors of the objects created from them.
+
+### Pip
+A package manager for Python that allows users to install and manage additional libraries and dependencies that are not included in the standard library.
+
+### Python Package
+A collection of Python modules that are grouped together. Packages are used to organize and structure Python code, making it easier to manage and reuse.
+
+### Python Virtual Environment
+An isolated environment for Python projects that allows dependencies to be installed and managed separately from the global Python installation. This helps avoid conflicts between project-specific dependencies.
+
+### CLI (Command Line Interface)
+A text-based interface used to interact with software and operating systems. Users input commands as text and receive text-based output.
+
+### Cruft
+Redundant, outdated, or unnecessary code and files in a software project. Removing cruft helps keep the codebase clean and maintainable.
+
+### YAML (YAML Ain't Markup Language)
+A human-readable data serialization format commonly used for configuration files and data exchange between languages with different data structures. It is known for its simplicity and ease of use.
+
+### JSON (JavaScript Object Notation)
+A lightweight data interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is commonly used for transmitting data in web applications.
+
+### Docker
+A platform that uses containerization to deploy and manage applications. Containers package an application and its dependencies, ensuring consistency across multiple environments.
+
+### Keycloak
+An open-source identity and access management solution. It provides authentication, authorization, and user management for applications and services.
+
+### Reference
+A reference is a citation or mention of a source of information, used to acknowledge the origin of ideas, data, or content. In research and documentation, references ensure the credibility and traceability of information.
+
+
