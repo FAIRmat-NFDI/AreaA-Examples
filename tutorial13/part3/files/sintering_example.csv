@@ -1,4 +1,4 @@
-step_name, duration [min], initial temperature [C], final temperature [C]
+step name,duration [min],initial temperature [C],final temperature [C]
 heating, 30, 25, 300
 hold, 60, 300, 300
 cooling, 30, 300, 25
