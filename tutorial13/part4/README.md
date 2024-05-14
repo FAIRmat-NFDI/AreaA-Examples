@@ -9,8 +9,15 @@
 - Docker installed on your computer, installation instructions can be found on
 [docs.docker.com/desktop/](https://docs.docker.com/desktop/)
 
-## 1. Create a Git(Hub) repository
-There is a GitHub template repository that can be used for this at [github.com/FAIRmat-NFDI/nomad-distribution-template](https://github.com/FAIRmat-NFDI/nomad-distribution-template).
+## Outline
+1. Create a Docker image
+2. Add the plugin
+3. Update permissions
+4. Run the OASIS
+
+## 1. Create a Docker image
+We will now create a custom docker image for our OASIS.
+There is a GitHub template repository with predefined workflows that can be used for this at [github.com/FAIRmat-NFDI/nomad-distribution-template](https://github.com/FAIRmat-NFDI/nomad-distribution-template).
 
 To use the template you should choose the "Create an new repository" option after pressing
 the green "Use this template" button in the upper right corner.
