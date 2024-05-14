@@ -25,10 +25,10 @@ A practical session will guide users through a typical synthesis data example, d
 The session is designed to serve various user groups, including standard users, data stewards & data scientists, and system administrators, ensuring that each participant gains a comprehensive understanding of the tool's capabilities and applications in their respective roles. Join us to explore how NOMAD can transform your approach to data management in experimental synthesis, leading to more efficient and coherent research outputs - FAIR principles in practice.
 
 **Schedule**:
-  * **Part 1.** [Introduction:](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part1) [**Link to slides**]()
+  * **Part 1.** [Introduction:](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part1) [**Link to slides**](https://github.com/FAIRmat-NFDI/AreaA-Examples/blob/main/tutorial13/Tutorial13_NOMAD_15-05-24.pdf)
      * user roles in NOMAD
      * overview on tutorial
-  * **Part 2.** [NOMAD's Base Sections and Built-in Schemas](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part2) (for all users) [**Link to slides**]()
+  * **Part 2.** [NOMAD's Base Sections and Built-in Schemas](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part2) (for all users) [**Link to slides**](https://github.com/FAIRmat-NFDI/AreaA-Examples/blob/main/tutorial13/Tutorial13_NOMAD_15-05-24.pdf)
      * Base Sections: introduction to NOMAD's data model to ensure interoperability
      * Built-in ELNs: introduction to NOMAD's ELNs
   * **Part 3.** [Customization - Schema and Plugin development for experimental data in NOMAD:](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial13/part3) (for data stewards/scientists and interested users)
