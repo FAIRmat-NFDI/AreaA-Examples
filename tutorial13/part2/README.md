@@ -38,6 +38,8 @@ Follow this
 [step-by-step guide :link:](https://scribehow.com/embed/Create_new_Upload_on_NOMAD_Lab_Oasis_Platform__8n74Ia2KRS6813lZJ9hmtA)
 to create an upload in NOMAD.
 
+[<img src="files/thumbnails/1.png" width="600px"/>](https://scribehow.com/embed/Create_new_Upload_on_NOMAD_Lab_Oasis_Platform__8n74Ia2KRS6813lZJ9hmtA)
+
 ### 2.1b Add the Experiment and steps involved
 After creating an upload, we will create an entry using Experiment ELN. Within this
 ELN entry, we will create steps: the sintering (Process) and XRD (Measurement). Each of the
@@ -49,6 +51,7 @@ allowing us to navigate in our data structure in a very agile fashion.
 A graphical summary of our experiment is available in the `Overview > Workflow` section, 
 as shown in the last slide of this [step-by-step guide :link:](https://scribehow.com/embed/Create_Experiment_ELN_for_Sintering_Process__dWi9ZL2RS9mKJ1XPsL32XQ).
 
+[<img src="files/thumbnails/2.png" width="600px"/>](https://scribehow.com/embed/Create_Experiment_ELN_for_Sintering_Process__dWi9ZL2RS9mKJ1XPsL32XQ)
 
 ### 2.1c Add the Sample and populate the Process step
 
@@ -68,6 +71,9 @@ as shown in the [dedicated documentation](https://nomad-lab.eu/prod/v1/staging/g
 
 Take a look at the following [step-by-step guide :link:](https://scribehow.com/embed/Populate_Process_ELN_and_create_Sample_ELN__As9sadvhS4a979Cd7rOPyA) for this section.
 
+[<img src="files/thumbnails/3.png" width="600px"/>](https://scribehow.com/embed/Populate_Process_ELN_and_create_Sample_ELN__As9sadvhS4a979Cd7rOPyA)
+
+
 ### 2.1d Populate the Measurement results
 We will go into the Measurement ELN on the upload page and add XRD data. 
 We will use the free text `comment` field available also here under `results` sub-section. 
@@ -79,6 +85,8 @@ example of using references to create connections between entries: sample is
 linked with both measurement and process. 
 
 Take a look at the following [step-by-step guide :link:](https://scribehow.com/embed/Populating_ELN_Measurement__P21WfffiSZaRVTYpcjaVXQ) for this section.
+
+[<img src="files/thumbnails/4.png" width="600px"/>](https://scribehow.com/embed/Populating_ELN_Measurement__P21WfffiSZaRVTYpcjaVXQ)
 
 
 ## 2.2: Customization of the ELNs
@@ -114,6 +122,8 @@ to see some examples of YAML files that inherit and extend existing classes.
 
 Also, take a look at the following [step-by-step guide :link:](https://scribehow.com/embed/Create_Custom_Sintering_Process_Schema___uGkfGM-SziDbaiu9Ojpyg) for this section.
 
+[<img src="files/thumbnails/5.png" width="600px"/>](https://scribehow.com/embed/Create_Custom_Sintering_Process_Schema___uGkfGM-SziDbaiu9Ojpyg)
+
 ### 2.2b XRD Plugin
 Plugins provide high degree of control on the behavior of ELNs based on user-defined Python
 code. We can use this feature to define the automation behind the ELNs. For example,
@@ -132,6 +142,7 @@ Please feel free to take a look at them and comment in the repo, open issues, or
 
 Take a look at the following [step-by-step guide :link:](https://scribehow.com/embed/Create_XRD_Measurement_ELN_entry_using_plugin__CaFgPhKwTju8hjrSop9Vrg) for this section.
 
+[<img src="files/thumbnails/6.png" width="600px"/>](https://scribehow.com/embed/Create_XRD_Measurement_ELN_entry_using_plugin__CaFgPhKwTju8hjrSop9Vrg)
 
 ## 3. Example upload
 After following the steps mentioned above, we end with an upload containing some 
