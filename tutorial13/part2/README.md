@@ -38,7 +38,16 @@ about uploads in the official [NOMAD documentation](https://nomad-lab.eu/prod/v1
 
 Follow these steps to create your upload.
 
-[<img src='image.png' width='600'>](https://scribehow.com/embed/Create_new_Upload_on_NOMAD_Lab_Oasis_Platform__8n74Ia2KRS6813lZJ9hmtA)
+<div align="center">
+	<br>
+	<a href="https://github.com/sindresorhus/css-in-readme-like-wat/blame/main/header.svg">
+		<img src="image.svg" width="800" height="400" alt="Click to see the source">
+	</a>
+	<br>
+</div>
+<!-- <img src="image.svg" width='600'>
+[](https://scribehow.com/embed/Create_new_Upload_on_NOMAD_Lab_Oasis_Platform__8n74Ia2KRS6813lZJ9hmtA){:target='_blank'} -->
+
 <!-- 
 <iframe src="https://scribehow.com/embed/Create_new_Upload_on_NOMAD_Lab_Oasis_Platform__8n74Ia2KRS6813lZJ9hmtA" width="80%" height="600" allowfullscreen frameborder="0"></iframe> -->
 
