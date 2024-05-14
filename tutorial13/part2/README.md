@@ -38,7 +38,9 @@ about uploads in the official [NOMAD documentation](https://nomad-lab.eu/prod/v1
 
 Follow these steps to create your upload.
 
-<iframe src="https://scribehow.com/embed/Create_new_Upload_on_NOMAD_Lab_Oasis_Platform__8n74Ia2KRS6813lZJ9hmtA" width="80%" height="600" allowfullscreen frameborder="0"></iframe>
+[![Create an upload](image.png)](https://scribehow.com/embed/Create_new_Upload_on_NOMAD_Lab_Oasis_Platform__8n74Ia2KRS6813lZJ9hmtA)
+<!-- 
+<iframe src="https://scribehow.com/embed/Create_new_Upload_on_NOMAD_Lab_Oasis_Platform__8n74Ia2KRS6813lZJ9hmtA" width="80%" height="600" allowfullscreen frameborder="0"></iframe> -->
 
 ### Add the Experiment and steps involved
 After creating an upload, we will create an entry using Experiment ELN. Within this
