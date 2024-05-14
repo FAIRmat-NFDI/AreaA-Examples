@@ -1,6 +1,6 @@
 # **FAIRmat Tutorial 13:** 
 
-# **NOMAD for Experimental Data Management in Synthesis**
+## **NOMAD for Experimental Data Management in Synthesis**
   
 * **Organized by**: [FAIRmat Area A](https://www.fairmat-nfdi.eu/fairmat/areas-fairmat/area-a-fairmat)
 
@@ -8,7 +8,7 @@
 
 * **Registration**: https://events.fairmat-nfdi.eu/event/18/
 
-* **Contact:** 
+* **Contacts:** 
    - sebastian.brueckner@physik.hu-berlin.de
    - sarthak.kapoor@physik.hu-berlin.de
    - hampus.naesstroem@physik.hu-berlin.de
@@ -38,7 +38,7 @@ The session is designed to serve various user groups, including standard users, 
 
 ---
 
-# Glossary
+## Glossary
 
 This glossary provides definitions for key terms used in this project. Understanding these terms will help you navigate and use the project more effectively.
 
@@ -130,4 +130,15 @@ An open-source identity and access management solution. It provides authenticati
 ### Reference
 A reference is a citation or mention of a source of information, used to acknowledge the origin of ideas, data, or content. In research and documentation, references ensure the credibility and traceability of information.
 
+## Further Documentation
+
+> Several software development concepts are being used during this tutorial. 
+> A list is reported hereafter to provide further info on each of them:
+> * [what is Git](https://learn.microsoft.com/en-us/devops/develop/git/what-is-git)
+> * [what is VSCode, i. e., an Integrated Development Environment (IDE)](https://aws.amazon.com/what-is/ide/)
+> * [what is Pip](https://realpython.com/lessons/what-is-pip-overview/)
+> * [what is a Python virtual environment](https://realpython.com/python-virtual-environments-a-primer/#why-do-you-need-virtual-environments)
+> * [creating a Python package](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+> * [uploading a package to PyPI](https://www.freecodecamp.org/news/how-to-create-and-upload-your-first-python-package-to-pypi/)
+> * [what is cruft](https://cruft.github.io/cruft/)
 
