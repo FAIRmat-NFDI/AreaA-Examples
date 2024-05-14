@@ -11,38 +11,36 @@
                     transform: scale(1.05);
                     }
                 }
-                .container {
-                    width: 600px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
+        .container {
+            width: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-                .container:hover {
-                    animation: scale 0.2s ease-in-out forwards;
-                    opacity: 0.5;
-                }
-                .overlay {
-                    position: absolute;
-                    opacity: 0;
-                    top: 50%;
-                    left: 50%;
-                    fill:rgba(0, 0, 0, 0);
-                    transform: translate(-50%, -50%);
-                    color: black;
-                    font-size: 30px;
-                    font-family: 'Segoe UI', Arial, sans-serif;
-                    text-align: center;
-                    pointer-events: none;
-                    }
-                .container:hover .overlay {
-                    fill: rgba(0, 0, 0, 0.5);
-                    opacity: 1;
-                }
+        .container:hover {
+            animation: scale 0.2s ease-in-out forwards;
+            opacity: 0.5;
+        }
+        .overlay {
+            position: absolute;
+            opacity: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 30px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            text-align: center;
+            pointer-events: none;
+        }
+        .container:hover .overlay {
+            opacity: 1;
+        }
 			</style>
 			<div class="container">
-				<img src="image.png" width='80%' height='80%'>
-                <div class="overlay">Click here</div>
+				<img src="image.png" width='80%' height='80%' />
+        <div class="overlay">Click Here</div>
 			</div>
     </div>
   </foreignObject>
