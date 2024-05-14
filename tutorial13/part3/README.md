@@ -21,6 +21,14 @@ In this part of the tutorial you will learn how to create and develop a NOMAD pl
 > * [uploading a package to PyPI](https://www.freecodecamp.org/news/how-to-create-and-upload-your-first-python-package-to-pypi/)
 > * [what is cruft](https://cruft.github.io/cruft/)
 
+## Outline
+1. Create a Git(Hub) repository
+2. Generate the plugin structure
+3. Setting up the python environment
+4. Importing a yaml schema
+5. Adding a normalize function
+6. Running the normalize function
+
 ## 1. Create a Git(Hub) repository
 Firstly, we recommend to use git to version control your NOMAD plugin.
 There is a GitHub template repository that can be used for this at [github.com/FAIRmat-NFDI/nomad-plugin-template](https://github.com/FAIRmat-NFDI/nomad-plugin-template).
@@ -150,7 +158,7 @@ git commit -m "Generated plugin from cookiecutter template"
 git push
 ```
 
-## 3. Setting up python
+## 3. Setting up the python environment
 
 ### 3.1 Creating a virtual environment
 Before we can start developing we recommend to create a virtual environment using Python 3.9
@@ -419,7 +427,7 @@ class Sintering(Process, EntryData, ArchiveSection):
 We will now run the NOMAD processing on a test file to see the normalize function in
 action.
 
-### 5.1 Create an archive.json file
+### 6.1 Create an archive.json file
 The first step is to create the test file.
 We should add a file with the ending `.archive.yaml` or `archive.json` and which contains
 a `data` section and an `m_def` key with the value being our sintering section.
@@ -440,7 +448,7 @@ curl -L -o tests/data/test_sintering.archive.yaml "https://raw.githubusercontent
 > You might need to modify the package name for the `m_def` if you called your python 
 > module something other than `nomad_sintering`
 
-### 5.2 Run the NOMAD CLI
+### 6.2 Run the NOMAD CLI
 To run the processing we us the NOMAD CLI method `parse` with the flag `--show-archive`
 and save the output in a json file
 
@@ -450,7 +458,7 @@ nomad parse tests/data/test_sintering.archive.yaml --show-archive > normalized.a
 
 To view the output you can open and inspect the `normalized.archive.json` file.
 
-### 5.3 Next steps
+### 6.3 Next steps
 In the next part of the tutorial we will show how you can deploy your own NOMAD Oasis with
 the plugin you just developed.
 Before we move one we should make sure that we have commited our changes to git:
