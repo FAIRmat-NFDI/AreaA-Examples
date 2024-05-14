@@ -114,26 +114,7 @@ nomad-sintering/
 ├── MANIFEST.in
 ├── README.md
 ├── docs
-│   ├── assets
-│   │   ├── favicon.png
-│   │   └── nomad-plugin-logo.png
-│   ├── explanation
-│   │   └── explanation.md
-│   ├── how_to
-│   │   ├── contribute_to_the_documentation.md
-│   │   ├── contribute_to_this_plugin.md
-│   │   ├── install_this_plugin.md
-│   │   └── use_this_plugin.md
-│   ├── index.md
-│   ├── reference
-│   │   └── references.md
-│   ├── stylesheets
-│   │   └── extra.css
-│   ├── theme
-│   │   └── partials
-│   │       └── header.html
-│   └── tutorial
-│       └── tutorial.md
+│   └── ...
 ├── mkdocs.yml
 ├── move_template_files.sh
 ├── pyproject.toml
@@ -421,7 +402,7 @@ class Sintering(Process, EntryData, ArchiveSection):
         super(Sintering, self).normalize(archive, logger)
         if self.data_file:
           with archive.m_context.raw_file(self.data_file) as file:
-            df = pd.read_csv(self.data_file)
+            df = pd.read_csv(file)
           steps = []
           for i, row in df.iterrows():
             step = TemperatureRamp()
@@ -453,7 +434,7 @@ data:
 We can once again grab this file from the tutorial repository and place it in the 
 tests/data directory using curl
 ```sh
-curl -L -o tests/data/test_sintering.archive.yaml "https://raw.githubusercontent.com/FAIRmat-NFDI/AreaA-Examples/main/tutorial13/part3/files/sintering_example.csv"
+curl -L -o tests/data/test_sintering.archive.yaml "https://raw.githubusercontent.com/FAIRmat-NFDI/AreaA-Examples/main/tutorial13/part3/files/test_sintering.archive.yaml"
 ```
 > [!IMPORTANT] 
 > You might need to modify the package name for the `m_def` if you called your python 
