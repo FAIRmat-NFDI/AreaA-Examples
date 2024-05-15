@@ -141,7 +141,7 @@ nomad-sintering/
 ```
 
 > [!NOTE]
-> The project `nomad-awesome-tools` is created in a new directory, we have included a helper script to move all the files to the parent level of the repository.
+> The project `nomad-sintering` is created in a new directory, we have included a helper script to move all the files to the parent level of the repository.
 
 
 ```sh
