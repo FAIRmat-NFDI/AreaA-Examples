@@ -1,7 +1,3 @@
-> [!WARNING]
-> This is work in progress and some of the commands below might not work before the day
-> of the tutorial (15th of May, 2024).
-
 # Part 4: Deploying a NOMAD Oasis with Plugins
 
 ## Prerequisites
