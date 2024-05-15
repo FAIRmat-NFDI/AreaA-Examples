@@ -14,6 +14,9 @@
    - hampus.naesstroem@physik.hu-berlin.de
    - andrea.albino@physik.hu-berlin.de
    - fairmat-events@physik.hu-berlin.de
+* **Discord:**
+   - [NOMAD's Discord server](https://discord.gg/53QA5gxY)
+   - [Tutorial 13 Discord Thread](https://discord.com/channels/1201445470485106719/1240225326194495498)
 
 
 FAIRmat Tutorial 13, presented by FAIRmat Area A Synthesis, introduces NOMAD and NOMAD Oasis as essential tools for research data management (RDM). This tutorial will specifically demonstrate how to utilize these tools for managing experimental materials science data, with a particular focus on synthesis data.
