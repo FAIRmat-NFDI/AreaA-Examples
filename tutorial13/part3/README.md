@@ -308,7 +308,7 @@ function. This allows us to add functionality to our schemas via Python code.
 For this tutorial we will assume that we have a recipe file for our hot plate that we will
 parse:
 ```csv
-step name, duration [min], initial temperature [C], final temperature [C]
+step name,duration [min],initial temperature [C],final temperature [C]
 heating, 30, 25, 300
 hold, 60, 300, 300
 cooling, 30, 300, 25
