@@ -113,7 +113,7 @@ An isolated environment for Python projects that allows dependencies to be insta
 A text-based interface used to interact with software and operating systems. Users input commands as text and receive text-based output.
 
 ### Cruft
-Redundant, outdated, or unnecessary code and files in a software project. Removing cruft helps keep the codebase clean and maintainable.
+Built on top of CookieCutter, a utility for creating projects from templates, this tool ensures a clean and standardized project setup. It also includes an update mechanism, allowing you to seamlessly update your project when the template changes.
 
 ### YAML (YAML Ain't Markup Language)
 A human-readable data serialization format commonly used for configuration files and data exchange between languages with different data structures. It is known for its simplicity and ease of use.
