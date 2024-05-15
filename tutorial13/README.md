@@ -40,46 +40,26 @@ The session is designed to serve various user groups, including standard users, 
 
 ## Glossary
 
-This glossary provides definitions for key terms used in this project. Understanding these terms will help you navigate and use the project more effectively.
+This glossary provides definitions for key terms used for software development in this project. Understanding these terms will help you navigate and use the project more effectively.
 
 ### NOMAD and NOMAD Oasis
 **NOMAD (Novel Materials Discovery)**: A repository and data management platform for materials science data.  
 **NOMAD Oasis**: A customizable version of the NOMAD repository that can be deployed and managed independently by organizations or research groups.
 
-### GitHub
-A web-based platform used for version control and collaborative software development. It uses Git for managing changes to the source code and provides additional features for project management and collaboration.
-
-### Git
-A distributed version control system that tracks changes in source code during software development. It allows multiple developers to work on a project simultaneously, managing code changes and versions efficiently.
-
-### GitHub Codespace
-A cloud-based development environment provided by GitHub. It allows developers to code, build, and debug directly in the cloud without needing to set up a local development environment.
+### Research Data Management (RDM)
+Refers to the organization, storage, preservation, and sharing of data collected and used during a research project. Effective RDM ensures that data is accurate, accessible, and reusable.
 
 ### Data Schema
 A structured framework or blueprint that defines the organization, structure, and constraints of data. It is commonly used in databases and data modeling to describe the format and relationships of data elements.
 
 ### Data Model
-An abstract representation of the data structures and relationships used within a database or information system. It serves as a blueprint for designing and implementing a database.
+An abstract representation of the data structures and relationships used within a database or information system. It is formalized within schemas and it serves as a blueprint for designing and implementing a database.
 
 ### Template
-A predefined format or layout that serves as a starting point for creating new documents or files. Templates ensure consistency and standardization across multiple instances of a document or file type.
+An empty file whose structure is determined by a schema. Multiple templates are created from same schemas and filled with data, giving rise to an homogeneous data repository.
 
-### Quantity
-A measurable amount or number that defines some attribute or property of an entity or dataset in data management.
 
-### Sections and Subsections
-Structural elements used to organize content within a document or dataset. Sections provide high-level organization, while subsections offer more detailed breakdowns within each section.
-
-### Parser
-A software component that reads and interprets data, converting it from one format to another. Parsers are used to process input data and extract meaningful information for further use.
-
-### Normalizer
-A tool or process that transforms data into a standardized format. Normalization ensures consistency and comparability across different datasets and systems.
-
-### RDM (Research Data Management)
-Refers to the organization, storage, preservation, and sharing of data collected and used during a research project. Effective RDM ensures that data is accurate, accessible, and reusable.
-
-### ELN (Electronic Lab Notebook)
+### Electronic Lab Notebook (ELN)
 A digital platform for documenting research processes, experiments, and results. ELNs enhance data organization, sharing, and collaboration in scientific research.
 
 ### FAIR Data
@@ -88,34 +68,43 @@ Principles that stand for Findable, Accessible, Interoperable, and Reusable. The
 ### Repository
 A centralized location where data, code, or other digital assets are stored and managed. In the context of GitHub and Git, a repository is a project space where all files, including their history and versions, are kept.
 
-### Software Image
-A file that contains a copy of the operating system and installed software, often used for deployment and replication of software environments.
-
-### Software Plugin
-A set of software components that adds specific capabilities to an existing computer program. Plugins enable customization and enhance the functionality of the main application.
+### Classes
+In Python, a class is a blueprint for creating objects. Classes define the properties and behaviors of the objects created from them.
 
 ### Python
 A high-level, interpreted programming language known for its simplicity and readability. It is widely used for web development, data analysis, scientific computing, artificial intelligence, and more.
 
-### Classes
-In Python, a class is a blueprint for creating objects. Classes define the properties and behaviors of the objects created from them.
-
 ### Pip
-A package manager for Python that allows users to install and manage additional libraries and dependencies that are not included in the standard library.
-
-### Python Package
-A collection of Python modules that are grouped together. Packages are used to organize and structure Python code, making it easier to manage and reuse.
+A package manager for Python that allows users to install and manage additional libraries and dependencies that are not included in the standard library. [What is Pip?](https://realpython.com/lessons/what-is-pip-overview/)
 
 ### Python Virtual Environment
-An isolated environment for Python projects that allows dependencies to be installed and managed separately from the global Python installation. This helps avoid conflicts between project-specific dependencies.
+An isolated environment for Python projects that allows dependencies to be installed and managed separately from the global Python installation. This helps avoid conflicts between project-specific dependencies. [What is a Python virtual environment?](https://realpython.com/python-virtual-environments-a-primer/#why-do-you-need-virtual-environments)
 
-### CLI (Command Line Interface)
+### Python Package
+A collection of Python modules that are grouped together. Packages are used to organize and structure Python code, making it easier to manage and reuse. [What is a Python package?](https://packaging.python.org/en/latest/tutorials/packaging-projects/) 
+
+### PyPI
+PyPI (Python Package Index) is a repository of software packages developed and shared by the Python community. [Uploading a package to PyPI.](https://www.freecodecamp.org/news/how-to-create-and-upload-your-first-python-package-to-pypi/)
+
+### Integrated Development Environment (IDE)
+An Integrated Development Environment (IDE) is a software application that provides comprehensive facilities to programmers for software development. [What is VSCode?](https://aws.amazon.com/what-is/ide/)
+
+### Git
+A distributed version control system that tracks changes in source code during software development. It allows multiple developers to work on a project simultaneously, managing code changes and versions efficiently. [What is Git?](https://learn.microsoft.com/en-us/devops/develop/git/what-is-git)
+
+### GitHub
+A web-based platform used for version control and collaborative software development. It uses Git for managing changes to the source code and provides additional features for project management and collaboration.
+
+### GitHub Codespace
+A cloud-based development environment provided by GitHub. It allows developers to code, build, and debug directly in the cloud without needing to set up a local development environment.
+
+### Command Line Interface (CLI)
 A text-based interface used to interact with software and operating systems. Users input commands as text and receive text-based output.
 
 ### Cruft
-Built on top of CookieCutter, a utility for creating projects from templates, this tool ensures a clean and standardized project setup. It also includes an update mechanism, allowing you to seamlessly update your project when the template changes.
+Built on top of CookieCutter, a utility for creating projects from templates, this tool ensures a clean and standardized project setup. It also includes an update mechanism, allowing you to seamlessly update your project when the template changes. [What is cruft?](https://cruft.github.io/cruft/)
 
-### YAML (YAML Ain't Markup Language)
+### YAML (Yet Another Markup Language)
 A human-readable data serialization format commonly used for configuration files and data exchange between languages with different data structures. It is known for its simplicity and ease of use.
 
 ### JSON (JavaScript Object Notation)
@@ -128,17 +117,5 @@ A platform that uses containerization to deploy and manage applications. Contain
 An open-source identity and access management solution. It provides authentication, authorization, and user management for applications and services.
 
 ### Reference
-A reference is a citation or mention of a source of information, used to acknowledge the origin of ideas, data, or content. In research and documentation, references ensure the credibility and traceability of information.
-
-## Further Documentation
-
-> Several software development concepts are being used during this tutorial. 
-> A list is reported hereafter to provide further info on each of them:
-> * [what is Git](https://learn.microsoft.com/en-us/devops/develop/git/what-is-git)
-> * [what is VSCode, i. e., an Integrated Development Environment (IDE)](https://aws.amazon.com/what-is/ide/)
-> * [what is Pip](https://realpython.com/lessons/what-is-pip-overview/)
-> * [what is a Python virtual environment](https://realpython.com/python-virtual-environments-a-primer/#why-do-you-need-virtual-environments)
-> * [creating a Python package](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
-> * [uploading a package to PyPI](https://www.freecodecamp.org/news/how-to-create-and-upload-your-first-python-package-to-pypi/)
-> * [what is cruft](https://cruft.github.io/cruft/)
+A reference is a link to one file in NOMAD, usually contained within another file in NOMAD. It is an important tool to describe highly linked data from materials science.
 
