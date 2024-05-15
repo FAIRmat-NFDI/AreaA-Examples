@@ -346,7 +346,7 @@ function `read_csv()`:
 ```py
 if self.data_file:
   with archive.m_context.raw_file(self.data_file) as file:
-    df = pd.read_csv(self.data_file)
+    df = pd.read_csv(file)
 ```
 
 We will then create a list to hold the steps, iterate over our data frame, create an
