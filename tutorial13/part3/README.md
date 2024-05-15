@@ -1,7 +1,3 @@
-> [!WARNING]
-> This is work in progress and some of the commands below might not work before the day
-> of the tutorial (15th of May, 2024).
-
 # Part 3: Developing a NOMAD Plugin
 In this part of the tutorial you will learn how to create and develop a NOMAD plugin.
 
