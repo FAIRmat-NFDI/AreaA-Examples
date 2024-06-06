@@ -1,0 +1,60 @@
+definitions:
+  name: 'My Custom Schemas'
+  sections:
+    TemperatureRamp:
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.ProcessStep
+      m_annotations:
+        eln: 
+          properties:
+            order: 
+              - "name"
+              - "start_time"
+              - "initial_temperature"
+              - "final_temperature"
+              - "duration"
+              - "comment"
+      quantities:
+        initial_temperature:
+          type: np.float64
+          unit: celsius
+          description: "Initial temperature set for ramp"
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+              defaultDisplayUnit: celsius
+        final_temperature:
+          type: np.float64
+          unit: celsius
+          description: "Final temperature set for ramp"
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+              defaultDisplayUnit: celsius
+
+    TemperatureHold:
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.ProcessStep
+      m_annotations:
+        eln: 
+          properties:
+            order: 
+              - "name"
+              - "start_time"
+              - "temperature"
+              - "duration"
+              - "comment"
+      quantities:
+        temperature:
+          type: np.float64
+          unit: celsius
+          description: "Temperature set for hold"
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+              defaultDisplayUnit: celsius
+
+    Annealing:
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.Process
+        - nomad.datamodel.data.EntryData      
