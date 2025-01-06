@@ -35,6 +35,9 @@ Each python file is not meant to be standalone, rather containing a snippet of c
 
 #### m_def attribute
 
+
+#### plotting
+
 few examples of commonly used `m_def` attributes accross existing plugins.
 
 ### Parser
