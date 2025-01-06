@@ -13,8 +13,6 @@
 * **Discord:**
    - [NOMAD's Discord server](https://discord.gg/53QA5gxY)
 
-* [**Tutorial 13 on Youtube** ](https://www.youtube.com/watch?v=0Jbf_d7N-_k&list=PLrRaxjvn6FDVhfYbSU537bxdKI7oIbIT3&pp=iAQB)
-
 This workshop, presented by FAIRmat Area A Synthesis, introduces NOMAD and NOMAD Oasis essential features for research data management (RDM). 
 
 Participants will learn about NOMAD's data model, and its various types and levels of schemas, including custom yaml schemas, community standards, and base sections. Later, the main strategies to develop a parser to instantiate and fill new entries with data from the lab will be covered. Each feature will be demonstrated in the framework of python packages created from a [template reposiroty](https://github.com/FAIRmat-NFDI/nomad-plugin-template), these packages are referred to as **plugins**:
@@ -26,6 +24,22 @@ The workshop is based on practical sessions that will guide users through some t
 **Schedule**:
 
 ---
+
+## Python files documentation
+
+A brief explanation is provided for each python file found in this folder:
+
+### 1 parse non editable entries
+
+entries will end up as binary files in the `archive` folder
+
+### 2 parse non editable multiple entries
+
+entries will end up as binary files in the `archive` folder
+
+### 3 parse editable entries
+
+entries will end up as plain text files in the `raw` folder
 
 ## Glossary
 
