@@ -1,10 +1,10 @@
-# **FAIRmat Workshop: parser development** 
+# **FAIRmat Workshop: parser development**
   
 * **Organized by**: [FAIRmat Area A](https://www.fairmat-nfdi.eu/fairmat/areas-fairmat/area-a-fairmat)
 
 * **Jan 15, 2024, 10:00 AM until Jan 16, 2024 5:00 PM**
 
-* **Contacts:** 
+* **Contacts:**
    - sebastian.brueckner@physik.hu-berlin.de
    - sarthak.kapoor@physik.hu-berlin.de
    - hampus.naesstroem@physik.hu-berlin.de
@@ -25,21 +25,65 @@ The workshop is based on practical sessions that will guide users through some t
 
 ---
 
-## Python files documentation
+## Python files documentation:
 
-A brief explanation is provided for each python file found in this folder:
+A brief explanation for each python file in this folder is provided below.
 
-### 1 parse non editable entries
+Each python file is not meant to be standalone, rather containing a snippet of code, complemented with the necessary import statements, ready to be included into your own plugin package code. Two categories have been created, namely __Schema__ and __Parser__.
+
+### Shema
+
+#### m_def attribute
+
+few examples of commonly used `m_def` attributes accross existing plugins.
+
+### Parser
+
+#### matching files
+
+this snippet will be included in the `__init__.py` file
+
+[An example with multiple mime types](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py#L24)
+
+#### create non editable entries
 
 entries will end up as binary files in the `archive` folder
 
-### 2 parse non editable multiple entries
+#### create non editable multiple entries
 
 entries will end up as binary files in the `archive` folder
 
-### 3 parse editable entries
+#### create editable entries
 
 entries will end up as plain text files in the `raw` folder
+
+#### nest or reference
+
+
+#### writing a reference
+
+
+#### reading a reference
+
+
+#### search for existing entries
+
+
+#### create an HDF5 file
+
+
+## Slides
+
+- what is metainfo
+
+- "m" methods we use:
+   m_def
+   m_context
+   m_to_dict
+   m_resolve
+   m_copy
+
+- what to put in normalize and what in parser
 
 ## Glossary
 
