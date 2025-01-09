@@ -36,11 +36,27 @@ Each python file is not meant to be a standalone script to execute, rather to co
 #### m_def attribute
 
 
+#### nest or reference
+
+
 #### plotting
 
 few examples of commonly used `m_def` attributes accross existing plugins.
 
 ### Parser
+
+#### create non editable entries
+
+entries will end up as binary files in the `archive` folder
+
+??? #### create non editable multiple entries
+
+??? entries will end up as binary files in the `archive` folder
+
+#### create editable entries
+
+entries will end up as plain text files in the `raw` folder
+
 
 #### matching files
 
@@ -48,19 +64,6 @@ this snippet will be included in the `__init__.py` file
 
 [An example with multiple mime types](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py#L24)
 
-#### create non editable entries
-
-entries will end up as binary files in the `archive` folder
-
-#### create non editable multiple entries
-
-entries will end up as binary files in the `archive` folder
-
-#### create editable entries
-
-entries will end up as plain text files in the `raw` folder
-
-#### nest or reference
 
 
 #### writing a reference
@@ -69,8 +72,7 @@ entries will end up as plain text files in the `raw` folder
 #### reading a reference
 
 
-#### search for existing entries
-
+### create a csv file
 
 #### create an HDF5 file
 
