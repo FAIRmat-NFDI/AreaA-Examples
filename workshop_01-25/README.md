@@ -25,11 +25,11 @@ The workshop is based on practical sessions that will guide users through some t
 
 ---
 
-## Python files documentation:
+## Python files documentation
 
 A brief explanation for each python file in this folder is provided below.
 
-Each python file is not meant to be standalone, rather containing a snippet of code, complemented with the necessary import statements, ready to be included into your own plugin package code. Two categories have been created, namely __Schema__ and __Parser__.
+Each python file is not meant to be a standalone script to execute, rather to contain a snippet of code, complemented with the necessary import statements, ready to be included into your own plugin package code. Two categories have been created, namely __Schema__ and __Parser__.
 
 ### Shema
 
@@ -75,18 +75,16 @@ entries will end up as plain text files in the `raw` folder
 #### create an HDF5 file
 
 
-## Slides
 
-- what is metainfo
 
-- "m" methods we use:
-   m_def
-   m_context
-   m_to_dict
-   m_resolve
-   m_copy
 
-- what to put in normalize and what in parser
+
+
+
+
+
+
+
 
 ## Glossary
 
