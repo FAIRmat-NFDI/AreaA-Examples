@@ -8,7 +8,7 @@ Feel free to contact us by email at <fairmat@physik.hu-berlin.de> if you have an
 * [**FAIRmat Worshop**: On-boarding of new users for the customization of NOMAD Oasis.](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/workshop_01-25)
 
 <p align="center">
-<img width="500" alt="image" src="https://github.com/FAIRmat-NFDI/AreaA-Examples/blob/10-code-snippets-examples-for-parser-development/workshop_01-25/cover.png"> 
+<img width="500" alt="image" src="https://github.com/FAIRmat-NFDI/AreaA-Examples/blob/main/workshop_01-25/cover.png"> 
 </p>
 
 * [**FAIRmat Tutorial 8**: Using NOMAD as an Electronic Laboratory Notebook (ELN)](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8) 🔗[Link](https://www.fairmat-nfdi.eu/events/fairmat-tutorial-8/tutorial-8-home)
