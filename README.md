@@ -2,7 +2,7 @@
 
 This is a repository to support learning resources created by FAIRmat Area A such as NOMAD tutorials, users meeting sessions etc.
 
-Feel free to contact us by [email](fairmat@physik.hu-berlin.de) if you have any question or join us on our [Discord server](https://discord.gg/Gyzx3ukUw8).
+Feel free to contact us by email at <fairmat@physik.hu-berlin.de> if you have any question or join us on our [Discord server](https://discord.gg/Gyzx3ukUw8).
 
 
 * [**FAIRmat Worshop**: On-boarding of new users for the customization of NOMAD Oasis.](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/workshop_01-25)
