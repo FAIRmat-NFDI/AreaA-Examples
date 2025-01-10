@@ -5,10 +5,10 @@ This is a repository to support learning resources created by FAIRmat Area A suc
 Feel free to contact us by [email](fairmat@physik.hu-berlin.de) if you have any question or join us on our [Discord server](https://discord.gg/Gyzx3ukUw8).
 
 
-* [**FAIRmat Worshop**: On-boarding of new users from the Overarching Fair Ecosystem for Data (OFED) project for the customization of NOMAD Oasis.](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/workshop_01-25) 
+* [**FAIRmat Worshop**: On-boarding of new users from the Overarching Fair Ecosystem for Data (OFED) project for the customization of NOMAD Oasis.](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/workshop_01-25)
 
 <p align="center">
-<img width="500" alt="image" src=""> 
+<img width="500" alt="image" src="https://github.com/FAIRmat-NFDI/AreaA-Examples/blob/10-code-snippets-examples-for-parser-development/workshop_01-25/cover.png"> 
 </p>
 
 * [**FAIRmat Tutorial 8**: Using NOMAD as an Electronic Laboratory Notebook (ELN)](https://github.com/FAIRmat-NFDI/AreaA-Examples/tree/main/tutorial8) 🔗[Link](https://www.fairmat-nfdi.eu/events/fairmat-tutorial-8/tutorial-8-home)
