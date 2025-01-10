@@ -24,8 +24,8 @@ The workshop is based on practical sessions that will guide users through some t
 
 * **Schedule**:
 
-  * start summary of tutorial things 30 min
-  * fork dev-ditro 1h
+  * start summary of tutorial things
+  * fork dev-distro
   * develop plugin:
     * main basic ideas
     * plugin infrastructure
@@ -56,25 +56,25 @@ Each python file is not meant to be a standalone script to execute, rather to co
 
 Get started with definition of your class.
 
-#### nest or reference
+#### Nest or reference
 
 Data modeling strategies: composition in the same archive or in different archives.
 
-#### plotting
+#### Plotting
 
 Few examples of commonly used `m_def` attributes accross existing plugins.
 
 ### Parser
 
-#### create non editable entries
+#### Create non editable entries
 
 Entries will end up as binary files in the `archive` folder. They cannot be modified! Do not use `EditQuantity` annotations in the schema.
 
-#### create editable entries
+#### Create editable entries
 
 Entries will end up as plain text files in the `raw` folder. They can be modified.
 
-#### matching files
+#### Matching files
 
 The snippet of code instructung a parser how to match a file will be included in the `__init__.py` file.
 
@@ -86,18 +86,18 @@ Some remarkable matching pattern:
 * [Stack multiple file mimetypes - 2](https://github.com/IKZ-Berlin/lakeshore-nomad-plugin/blob/main/src/lakeshore_nomad_plugin/hall/measurement_parser/__init__.py)
 * [wide xlsx file matching](https://github.com/IKZ-Berlin/nomad-ikz-plugin/blob/main/src/nomad_ikz_plugin/movpe/movpe1/growth_excel/__init__.py)
 
-#### handling a reference
+#### Handling a reference
 
 Create a reference to an entry and place it in another entry.
 
-#### create an HDF5 file
+#### Create an HDF5 file
 
 Handle HDF5 files creation.
 
 
 ### App
 
-#### example app
+#### Example app
 
 An app is a dashboard in the search panel that will allow to filter and show important data for you.
 
