@@ -15,7 +15,7 @@
 
 This workshop, presented by FAIRmat Area A Synthesis, introduces NOMAD and NOMAD Oasis essential features for research data management (RDM). 
 
-Participants will learn about NOMAD's data model, and its various types and levels of schemas, including custom yaml schemas, community standards, and base sections. Later, the main strategies to develop a parser to instantiate and fill new entries with data from the lab will be covered. Each feature will be demonstrated in the framework of python packages created from a [template reposiroty](https://github.com/FAIRmat-NFDI/nomad-plugin-template), these packages are referred to as **plugins**:
+Participants will learn about NOMAD's data model, and its various types and levels of schemas, including custom yaml schemas, community standards, and base sections. Later, the main strategies to develop a parser to instantiate and fill new entries with data from the lab will be covered. Each feature will be demonstrated in the framework of python packages created from a [template reposiroty](https://github.com/FAIRmat-NFDI/nomad-plugin-template), these packages are referred to as **plugins**.
 
 The development of the code will be done within a [development environment](https://github.com/FAIRmat-NFDI/nomad-distro-dev).
 
@@ -31,7 +31,7 @@ A brief explanation for each python file in this folder is provided below.
 
 Each python file is not meant to be a standalone script to execute, rather to contain a snippet of code, complemented with the necessary import statements, ready to be included into your own plugin package code. Two categories have been created, namely __Schema__ and __Parser__.
 
-### Shema
+### Schema
 
 #### m_def attribute
 
@@ -41,38 +41,32 @@ Each python file is not meant to be a standalone script to execute, rather to co
 
 #### plotting
 
-few examples of commonly used `m_def` attributes accross existing plugins.
+Few examples of commonly used `m_def` attributes accross existing plugins.
 
 ### Parser
 
 #### create non editable entries
 
-entries will end up as binary files in the `archive` folder
-
-??? #### create non editable multiple entries
-
-??? entries will end up as binary files in the `archive` folder
+Entries will end up as binary files in the `archive` folder. They cannot be modified! Do not use `EditQuantity` annotations in the schema.
 
 #### create editable entries
 
-entries will end up as plain text files in the `raw` folder
-
+Entries will end up as plain text files in the `raw` folder. They can be modified.
 
 #### matching files
 
-this snippet will be included in the `__init__.py` file
+The snippet of code instructung a parser how to match a file will be included in the `__init__.py` file.
 
-[An example with multiple mime types](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py#L24)
+Some remarkable matching pattern:
 
+- [Match a zip file](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
+- [Stack multiple file names](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
+- [Stack multiple file mimetypes](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
+- [Stack multiple file mimetypes - 2](https://github.com/IKZ-Berlin/lakeshore-nomad-plugin/blob/main/src/lakeshore_nomad_plugin/hall/measurement_parser/__init__.py)
+- [wide xlsx file matching](https://github.com/IKZ-Berlin/nomad-ikz-plugin/blob/main/src/nomad_ikz_plugin/movpe/movpe1/growth_excel/__init__.py)
 
+#### handling a reference
 
-#### writing a reference
-
-
-#### reading a reference
-
-
-### create a csv file
 
 #### create an HDF5 file
 

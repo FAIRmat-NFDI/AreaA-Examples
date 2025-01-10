@@ -16,21 +16,36 @@
 # limitations under the License.
 #
 
-from nomad.datamodel.datamodel import EntryArchive
-from nomad.parsing import MatchingParser
-
-from pdi_nomad_plugin.mbe.instrument import (
-    InstrumentMbePDI,
+from typing import (
+    TYPE_CHECKING,
 )
 
-class MyParser(MatchingParser):
+import pandas as pd
+
+if TYPE_CHECKING:
+    from nomad.datamodel.datamodel import (
+        EntryArchive,
+    )
+
+from nomad.datamodel.datamodel import EntryArchive
+from nomad.parsing import MatchingParser
+from nomad.parsing.parser import MatchingParser
+
+from nomad_aa_plugin.schema_packages.schema_package import MyClassOne
+
+
+class MyParserOne(MatchingParser):
     def parse(
         self,
-        mainfile: str,
+        mainfile: str, 
         archive: EntryArchive,
         logger,
     ) -> None:
+        
+        df_csv = pd.read_csv(mainfile, sep=',') #, decimal=',', engine='python')
 
-        archive.data = InstrumentMbePDI()
-        archive.data.name = 'my instrument'
-        archive.data.port_list = []
+        archive.data = MyClassOne()
+        archive.data.my_value = df_csv["Value"]
+        archive.data.my_time = df_csv["Value2"]
+
+
