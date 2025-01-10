@@ -72,28 +72,6 @@ class MyCategory(EntryDataCategory):
     )
 
 
-
-class HeaterTemperature(ArchiveSection):
-    """
-    The temperature of a heater.
-    """
-
-    m_def = Section(
-        a_h5web=H5WebAnnotation(axes='time', signal='value', long_name='Temperature')
-    )
-
-    value = Quantity(
-        type=HDF5Reference,
-        unit='K',
-        shape=[],
-    )
-    time = Quantity(
-        type=HDF5Reference,
-        description='The process time when each of the values were recorded.',
-        unit='second',
-        shape=[],
-    )
-
 class MyExampleClass(ArchiveSection):
     """
     A specialized section for IKZ based on the `UVVisNirTransmissionResult` section.
@@ -130,28 +108,6 @@ class MyExampleClass(ArchiveSection):
                 ],
             )
         ),
-        a_plotly_express={
-            'method': 'line',
-            'x': '#step_number',
-            'y': '#h1_soll_p',
-            'label': 'Example Express Plot',
-            'index': 0,
-            'layout': {
-                'title': {'text': 'Example Express Plot'},
-                'xaxis': {'title': {'text': 'x axis'}},
-                'yaxis': {'title': {'text': 'y axis'}},
-            },
-        },
-        a_plot=dict(
-            # x=['time', 'set_time'],
-            # y=['value', 'set_value'],
-            x='time',
-            y='value',
-        ),
-        a_h5web=H5WebAnnotation(axes='time', signal='value', long_name='Pressure')
-    )
-    m_def = Section(
-        a_h5web=H5WebAnnotation(paths=['temperature', 'power']),
     )
 
     name = Quantity(
@@ -162,44 +118,3 @@ class MyExampleClass(ArchiveSection):
         section_def=HeaterTemperature,
     )
 
-    m_def = Section(
-        a_plot=[
-            dict(
-                label='Pressure and Temperature',
-                x=[
-                    'sample_parameters/0/substrate_temperature/time',
-                    'environment/pressure/time',
-                ],
-                y=[
-                    'sample_parameters/0/substrate_temperature/value',
-                    'environment/pressure/value',
-                ],
-                lines=[
-                    dict(
-                        mode='lines',
-                        line=dict(
-                            color='rgb(25, 46, 135)',
-                        ),
-                    ),
-                    dict(
-                        mode='lines',
-                        line=dict(
-                            color='rgb(0, 138, 104)',
-                        ),
-                    ),
-                ],
-            ),
-            dict(
-                x='sources/0/vapor_source/power/time',
-                y='sources/0/vapor_source/power/value',
-            ),
-            dict(
-                x='sample_parameters/0/substrate_temperature/time',
-                y='sample_parameters/0/substrate_temperature/value',
-            ),
-            dict(
-                x='environment/pressure/time',
-                y='environment/pressure/value',
-            ),
-        ],
-    )

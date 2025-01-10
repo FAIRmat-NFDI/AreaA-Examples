@@ -5,13 +5,14 @@
 * **Jan 15, 2024, 10:00 AM until Jan 16, 2024 5:00 PM**
 
 * **Contacts:**
-   - sebastian.brueckner@physik.hu-berlin.de
-   - sarthak.kapoor@physik.hu-berlin.de
-   - hampus.naesstroem@physik.hu-berlin.de
-   - andrea.albino@physik.hu-berlin.de
-   - fairmat-events@physik.hu-berlin.de
+  * <sebastian.brueckner@physik.hu-berlin.de>
+  * <sarthak.kapoor@physik.hu-berlin.de>
+  * <hampus.naesstroem@physik.hu-berlin.de>
+  * <andrea.albino@physik.hu-berlin.de>
+  * <fairmat-events@physik.hu-berlin.de>
+
 * **Discord:**
-   - [NOMAD's Discord server](https://discord.gg/53QA5gxY)
+   [NOMAD's Discord server](https://discord.gg/53QA5gxY)
 
 This workshop, presented by FAIRmat Area A Synthesis, introduces NOMAD and NOMAD Oasis essential features for research data management (RDM). 
 
@@ -21,7 +22,25 @@ The development of the code will be done within a [development environment](http
 
 The workshop is based on practical sessions that will guide users through some typical data example, demonstrating how to start from existing schemas, extend a data schema, work within the framework of a NOMAD plugin for automated data processing, and deploy the schema on a local NOMAD Oasis. This hands-on approach will provide invaluable insights into customizing NOMAD to fit specific experimental workflows.
 
-**Schedule**:
+* **Schedule**:
+
+  * start summary of tutorial things 30 min
+  * fork dev-ditro 1h
+  * develop plugin:
+    * main basic ideas
+    * plugin infrastructure
+    * schema:
+    * data structure
+    * visualizations
+    * normalizations
+    * inherit and modify
+    * parser
+    * search app
+  * deployment
+  * basic analysis
+    * search data
+    * query
+    * get data in Jupyter
 
 ---
 
@@ -29,15 +48,17 @@ The workshop is based on practical sessions that will guide users through some t
 
 A brief explanation for each python file in this folder is provided below.
 
-Each python file is not meant to be a standalone script to execute, rather to contain a snippet of code, complemented with the necessary import statements, ready to be included into your own plugin package code. Two categories have been created, namely __Schema__ and __Parser__.
+Each python file is not meant to be a standalone script to execute, rather to contain a snippet of code, complemented with the necessary import statements, ready to be included into your own plugin package code. Three categories have been created, namely __schema__ and __parser__ and __app__.
 
 ### Schema
 
 #### m_def attribute
 
+Get started with definition of your class.
 
 #### nest or reference
 
+Data modeling strategies: composition in the same archive or in different archives.
 
 #### plotting
 
@@ -59,27 +80,26 @@ The snippet of code instructung a parser how to match a file will be included in
 
 Some remarkable matching pattern:
 
-- [Match a zip file](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
-- [Stack multiple file names](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
-- [Stack multiple file mimetypes](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
-- [Stack multiple file mimetypes - 2](https://github.com/IKZ-Berlin/lakeshore-nomad-plugin/blob/main/src/lakeshore_nomad_plugin/hall/measurement_parser/__init__.py)
-- [wide xlsx file matching](https://github.com/IKZ-Berlin/nomad-ikz-plugin/blob/main/src/nomad_ikz_plugin/movpe/movpe1/growth_excel/__init__.py)
+* [Match a zip file](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
+* [Stack multiple file names](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
+* [Stack multiple file mimetypes](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
+* [Stack multiple file mimetypes - 2](https://github.com/IKZ-Berlin/lakeshore-nomad-plugin/blob/main/src/lakeshore_nomad_plugin/hall/measurement_parser/__init__.py)
+* [wide xlsx file matching](https://github.com/IKZ-Berlin/nomad-ikz-plugin/blob/main/src/nomad_ikz_plugin/movpe/movpe1/growth_excel/__init__.py)
 
 #### handling a reference
 
+Create a reference to an entry and place it in another entry.
 
 #### create an HDF5 file
 
+Handle HDF5 files creation.
 
 
+### App
 
+#### example app
 
-
-
-
-
-
-
+An app is a dashboard in the search panel that will allow to filter and show important data for you.
 
 
 ## Glossary
