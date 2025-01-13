@@ -41,17 +41,16 @@ from nomad_aa_plugin.schema_packages.schema_package import MyClassFive, MyClassO
 class MyParserThree(MatchingParser):
     def parse(
         self,
-        mainfile: str, 
+        mainfile: str,
         archive: EntryArchive,
         logger,
     ) -> None:
-        
-        df_csv = pd.read_csv(mainfile, sep=',') #, decimal=',', engine='python')
+        df_csv = pd.read_csv(mainfile, sep=",")  # , decimal=',', engine='python')
 
-        filetype = 'yaml'
-        main_archive_filename = f'main.archive.{filetype}'
-        test_filename = f'test.archive.{filetype}'
-        
+        filetype = "yaml"
+        main_archive_filename = f"main.archive.{filetype}"
+        test_filename = f"test.archive.{filetype}"
+
         main_archive = EntryArchive()
         main_archive.data = MyClassFive(
             name="experiment",
@@ -60,8 +59,8 @@ class MyParserThree(MatchingParser):
         new_archive = EntryArchive()
         new_archive.data = MyClassOne(
             my_name="stuff to be referenced",
-            my_value = df_csv["ValueThree"],
-            my_time = df_csv["ValueThree2"],
+            my_value=df_csv["ValueThree"],
+            my_time=df_csv["ValueThree2"],
         )
 
         create_archive(
@@ -84,8 +83,7 @@ class MyParserThree(MatchingParser):
             filetype,
             logger,
         )
-        
+
         archive.data = MyClassFive()
         archive.data.name = "My namy name"
         archive.data.reference = f"../uploads/{upload_id}/archive/{entry_id}#data"
-        

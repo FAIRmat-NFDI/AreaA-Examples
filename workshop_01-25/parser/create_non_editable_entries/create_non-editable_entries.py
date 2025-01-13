@@ -37,15 +37,12 @@ from nomad_aa_plugin.schema_packages.schema_package import MyClassOne
 class MyParserOne(MatchingParser):
     def parse(
         self,
-        mainfile: str, 
+        mainfile: str,
         archive: EntryArchive,
         logger,
     ) -> None:
-        
-        df_csv = pd.read_csv(mainfile, sep=',') #, decimal=',', engine='python')
+        df_csv = pd.read_csv(mainfile, sep=",")  # , decimal=',', engine='python')
 
         archive.data = MyClassOne()
         archive.data.my_value = df_csv["Value"]
         archive.data.my_time = df_csv["Value2"]
-
-

@@ -23,20 +23,9 @@ import plotly.graph_objects as go
 
 from nomad.datamodel.metainfo.annotations import (
     ELNAnnotation,
-    Filter,
-    SectionProperties,
 )
 from nomad.metainfo import Section
-from transmission.schema import (
-    UVVisNirTransmissionResult,
-)
 
-from nomad.datamodel.metainfo.annotations import (
-    H5WebAnnotation,
-)
-from nomad_ikz_plugin.general.schema import (
-    IKZCategory,
-)
 
 if TYPE_CHECKING:
     pass
@@ -45,24 +34,16 @@ if TYPE_CHECKING:
 from nomad.datamodel.data import (
     ArchiveSection,
 )
-from nomad.datamodel.hdf5 import HDF5Reference
 from nomad.metainfo import (
     Quantity,
     SubSection,
 )
 
 
-
 from typing import (
     TYPE_CHECKING,
 )
 
-from nomad.datamodel.data import (
-    EntryDataCategory,
-)
-from nomad.metainfo.metainfo import (
-    Category,
-)
 from nomad.datamodel.data import EntryData
 
 from nomad.datamodel.metainfo.plot import (
@@ -73,36 +54,36 @@ from nomad.datamodel.metainfo.plot import (
 if TYPE_CHECKING:
     pass
 
-class MyClassOne(PlotSection, EntryData):
 
+class MyClassOne(PlotSection, EntryData):
     m_def = Section(
         a_plotly_express={
-            'method': 'line',
-            'x': '#my_value',
-            'y': '#my_time',
-            'label': 'Example Express Plot',
-            'index': 0,
-            'layout': {
-                'title': {'text': 'Example Express Plot'},
-                'xaxis': {'title': {'text': 'x axis'}},
-                'yaxis': {'title': {'text': 'y axis'}},
+            "method": "line",
+            "x": "#my_value",
+            "y": "#my_time",
+            "label": "Example Express Plot",
+            "index": 0,
+            "layout": {
+                "title": {"text": "Example Express Plot"},
+                "xaxis": {"title": {"text": "x axis"}},
+                "yaxis": {"title": {"text": "y axis"}},
             },
         },
-     )
+    )
 
     my_value = Quantity(
         type=float,
-        shape=['*'],
+        shape=["*"],
         a_eln=ELNAnnotation(
-            component='NumberEditQuantity',
+            component="NumberEditQuantity",
         ),
     )
 
     my_time = Quantity(
         type=float,
-        shape=['*'],
+        shape=["*"],
         a_eln=ELNAnnotation(
-            component='NumberEditQuantity',
+            component="NumberEditQuantity",
         ),
     )
 
@@ -111,27 +92,28 @@ class MyClassTwo(EntryData, ArchiveSection):
     """
     An example class
     """
+
     m_def = Section(
         a_plot=[
             dict(
-                label='Pressure and Temperature',
+                label="Pressure and Temperature",
                 x=[
-                    'my_class_one/0/my_time',
+                    "my_class_one/0/my_time",
                 ],
                 y=[
-                    'my_class_one/0/my_value',
+                    "my_class_one/0/my_value",
                 ],
                 lines=[
                     dict(
-                        mode='lines',
+                        mode="lines",
                         line=dict(
-                            color='rgb(25, 46, 135)',
+                            color="rgb(25, 46, 135)",
                         ),
                     ),
                     dict(
-                        mode='lines',
+                        mode="lines",
                         line=dict(
-                            color='rgb(0, 138, 104)',
+                            color="rgb(0, 138, 104)",
                         ),
                     ),
                 ],
@@ -146,7 +128,7 @@ class MyClassTwo(EntryData, ArchiveSection):
     my_name = Quantity(
         type=str,
         a_eln=ELNAnnotation(
-            component='StringEditQuantity',
+            component="StringEditQuantity",
         ),
     )
 
@@ -156,56 +138,56 @@ class MyClassTwo(EntryData, ArchiveSection):
     )
 
 
-
 class MyClassThree(EntryData, ArchiveSection):
     """
     An example class
     """
+
     m_def = Section(
         a_plotly_graph_object=[
             {
-                'label': 'shaft temperature',
-                'index': 0,
-                'dragmode': 'pan',
-                'data': {
-                    'type': 'scattergl',
-                    'line': {'width': 2},
-                    'marker': {'size': 6},
-                    'mode': 'lines+markers',
-                    'name': 'Temperature',
-                    'x': '#my_time',
-                    'y': '#my_value',
+                "label": "shaft temperature",
+                "index": 0,
+                "dragmode": "pan",
+                "data": {
+                    "type": "scattergl",
+                    "line": {"width": 2},
+                    "marker": {"size": 6},
+                    "mode": "lines+markers",
+                    "name": "Temperature",
+                    "x": "#my_time",
+                    "y": "#my_value",
                 },
-                'layout': {
-                    'title': {'text': 'Shaft Temperature'},
-                    'xaxis': {
-                        'showticklabels': True,
-                        'fixedrange': True,
-                        'ticks': '',
-                        'title': {'text': 'Process time [min]'},
-                        'showline': True,
-                        'linewidth': 1,
-                        'linecolor': 'black',
-                        'mirror': True,
+                "layout": {
+                    "title": {"text": "Shaft Temperature"},
+                    "xaxis": {
+                        "showticklabels": True,
+                        "fixedrange": True,
+                        "ticks": "",
+                        "title": {"text": "Process time [min]"},
+                        "showline": True,
+                        "linewidth": 1,
+                        "linecolor": "black",
+                        "mirror": True,
                     },
-                    'yaxis': {
-                        'showticklabels': True,
-                        'fixedrange': True,
-                        'ticks': '',
-                        'title': {'text': 'Temperature [°C]'},
-                        'showline': True,
-                        'linewidth': 1,
-                        'linecolor': 'black',
-                        'mirror': True,
+                    "yaxis": {
+                        "showticklabels": True,
+                        "fixedrange": True,
+                        "ticks": "",
+                        "title": {"text": "Temperature [°C]"},
+                        "showline": True,
+                        "linewidth": 1,
+                        "linecolor": "black",
+                        "mirror": True,
                     },
-                    'showlegend': False,
+                    "showlegend": False,
                 },
-                'config': {
-                    'displayModeBar': False,
-                    'scrollZoom': False,
-                    'responsive': False,
-                    'displaylogo': False,
-                    'dragmode': False,
+                "config": {
+                    "displayModeBar": False,
+                    "scrollZoom": False,
+                    "responsive": False,
+                    "displaylogo": False,
+                    "dragmode": False,
                 },
             },
             # {
@@ -219,25 +201,24 @@ class MyClassThree(EntryData, ArchiveSection):
         Sample name.
         """,
         a_eln=ELNAnnotation(
-            component='StringEditQuantity',
+            component="StringEditQuantity",
         ),
     )
     my_value = Quantity(
         type=float,
-        shape=['*'],
+        shape=["*"],
         a_eln=ELNAnnotation(
-            component='NumberEditQuantity',
+            component="NumberEditQuantity",
         ),
     )
 
     my_time = Quantity(
         type=float,
-        shape=['*'],
+        shape=["*"],
         a_eln=ELNAnnotation(
-            component='NumberEditQuantity',
+            component="NumberEditQuantity",
         ),
     )
-
 
 
 class MyClassFour(PlotSection, EntryData):
@@ -247,74 +228,73 @@ class MyClassFour(PlotSection, EntryData):
 
     my_value = Quantity(
         type=float,
-        shape=['*'],
+        shape=["*"],
         a_eln=ELNAnnotation(
-            component='NumberEditQuantity',
+            component="NumberEditQuantity",
         ),
     )
 
     my_time = Quantity(
         type=float,
-        shape=['*'],
+        shape=["*"],
         a_eln=ELNAnnotation(
-            component='NumberEditQuantity',
+            component="NumberEditQuantity",
         ),
     )
     my_value_bis = Quantity(
         type=float,
-        shape=['*'],
+        shape=["*"],
         a_eln=ELNAnnotation(
-            component='NumberEditQuantity',
+            component="NumberEditQuantity",
         ),
     )
 
     my_time_bis = Quantity(
         type=float,
-        shape=['*'],
+        shape=["*"],
         a_eln=ELNAnnotation(
-            component='NumberEditQuantity',
+            component="NumberEditQuantity",
         ),
     )
-    
-    def normalize(self, archive, logger):
 
+    def normalize(self, archive, logger):
         # plotly figure
         fig = go.Figure()
         fig.add_trace(
             go.Scatter(
                 x=self.my_time,
                 y=self.my_value,
-                name='Sub Temp',
-                line=dict(color='#2A4CDF', width=4),
-                yaxis='y',
+                name="Sub Temp",
+                line=dict(color="#2A4CDF", width=4),
+                yaxis="y",
             ),
         )
         fig.add_trace(
             go.Scatter(
                 x=self.my_time_bis,
                 y=self.my_value_bis,
-                name='Pyro Temp',
-                line=dict(color='#90002C', width=2),
-                yaxis='y',
+                name="Pyro Temp",
+                line=dict(color="#90002C", width=2),
+                yaxis="y",
             ),
         )
         fig.update_layout(
-            template='plotly_white',
-            dragmode='zoom',
+            template="plotly_white",
+            dragmode="zoom",
             xaxis=dict(
                 fixedrange=False,
                 autorange=True,
-                title='Process time / s',
-                mirror='all',
+                title="Process time / s",
+                mirror="all",
                 showline=True,
-                gridcolor='#EAEDFC',
+                gridcolor="#EAEDFC",
             ),
             yaxis=dict(
                 fixedrange=False,
-                title='Temperature / °C',
-                tickfont=dict(color='#2A4CDF'),
-                gridcolor='#EAEDFC',
+                title="Temperature / °C",
+                tickfont=dict(color="#2A4CDF"),
+                gridcolor="#EAEDFC",
             ),
             showlegend=True,
         )
-        self.figures = [PlotlyFigure(label='my figure 1', figure=fig.to_plotly_json())]
+        self.figures = [PlotlyFigure(label="my figure 1", figure=fig.to_plotly_json())]

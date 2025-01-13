@@ -40,24 +40,23 @@ from nomad_aa_plugin.schema_packages.schema_package import MyClassOne, MyClassTw
 class MyParserTwo(MatchingParser):
     def parse(
         self,
-        mainfile: str, 
+        mainfile: str,
         archive: EntryArchive,
         logger,
     ) -> None:
-        
-        df_csv = pd.read_csv(mainfile, sep=',') #, decimal=',', engine='python')
+        df_csv = pd.read_csv(mainfile, sep=",")  # , decimal=',', engine='python')
 
         archive.data = MyClassOne()
-    
+
         child_archive = EntryArchive()
 
         my_name = "And"
-        filetype = 'yaml'
+        filetype = "yaml"
 
-        example_filename = f'{my_name}.archive.{filetype}'
+        example_filename = f"{my_name}.archive.{filetype}"
 
         child_archive.data = MyClassTwo()
-        child_archive.data.my_name = f'{my_name}'
+        child_archive.data.my_name = f"{my_name}"
         child_archive.data.my_class_one = []
 
         child_archive.data.my_class_one.append(MyClassOne())

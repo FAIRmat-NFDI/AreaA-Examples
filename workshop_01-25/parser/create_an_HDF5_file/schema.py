@@ -10,7 +10,7 @@ from nomad.datamodel.data import (
 )
 
 from nomad.datamodel.hdf5 import HDF5Reference
-from nomad.datamodel.metainfo.annotations import (ELNAnnotation, H5WebAnnotation)
+from nomad.datamodel.metainfo.annotations import ELNAnnotation, H5WebAnnotation
 from nomad.metainfo import Quantity, SchemaPackage
 from nomad.datamodel.data import EntryData
 from nomad.metainfo import (
@@ -20,17 +20,18 @@ from nomad.metainfo import (
 
 m_package = SchemaPackage()
 
+
 class MyClassOneHDF5(EntryData, ArchiveSection):
-    """ 
+    """
     A test class for HDF5 data.
     """
 
-    m_def = Section(a_h5web=H5WebAnnotation(axes='my_time', signal='my_value'))
+    m_def = Section(a_h5web=H5WebAnnotation(axes="my_time", signal="my_value"))
 
     my_name = Quantity(
         type=str,
         a_eln=ELNAnnotation(
-            component='StringEditQuantity',
+            component="StringEditQuantity",
         ),
     )
 
@@ -44,6 +45,7 @@ class MyClassOneHDF5(EntryData, ArchiveSection):
         shape=[],
     )
 
+
 class MyClassTwoHDF5(EntryData, ArchiveSection):
     """
     An example class for hdf5 files
@@ -52,7 +54,7 @@ class MyClassTwoHDF5(EntryData, ArchiveSection):
     m_def = Section(
         a_h5web=H5WebAnnotation(
             paths=[
-                'my_class_one/*',
+                "my_class_one/*",
             ]
         ),
     )
@@ -60,7 +62,7 @@ class MyClassTwoHDF5(EntryData, ArchiveSection):
     my_name = Quantity(
         type=str,
         a_eln=ELNAnnotation(
-            component='StringEditQuantity',
+            component="StringEditQuantity",
         ),
     )
 

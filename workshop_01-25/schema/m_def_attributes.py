@@ -25,16 +25,7 @@ from nomad.datamodel.metainfo.annotations import (
     SectionProperties,
 )
 from nomad.metainfo import Section
-from transmission.schema import (
-    UVVisNirTransmissionResult,
-)
 
-from nomad.datamodel.metainfo.annotations import (
-    H5WebAnnotation,
-)
-from nomad_ikz_plugin.general.schema import (
-    IKZCategory,
-)
 
 if TYPE_CHECKING:
     pass
@@ -43,12 +34,10 @@ if TYPE_CHECKING:
 from nomad.datamodel.data import (
     ArchiveSection,
 )
-from nomad.datamodel.hdf5 import HDF5Reference
 from nomad.metainfo import (
     Quantity,
     SubSection,
 )
-
 
 
 from typing import (
@@ -68,7 +57,7 @@ if TYPE_CHECKING:
 
 class MyCategory(EntryDataCategory):
     m_def = Category(
-        label='IKZ Pulsed Laser Deposition', categories=[EntryDataCategory]
+        label="IKZ Pulsed Laser Deposition", categories=[EntryDataCategory]
     )
 
 
@@ -79,23 +68,23 @@ class MyExampleClass(ArchiveSection):
 
     m_def = Section(
         categories=[MyCategory],
-        label='IKZ UV-Vis-NIR Transmission',
-        label_quantity='lab_id',  # "growth_id",
+        label="IKZ UV-Vis-NIR Transmission",
+        label_quantity="lab_id",  # "growth_id",
         a_template={
-            'measurement_identifiers': {},
+            "measurement_identifiers": {},
         },
         a_eln=ELNAnnotation(
-            lane_width='800px',
+            lane_width="800px",
             properties=SectionProperties(
                 order=[
-                    'transmittance',
-                    'absorbance',
-                    'wavelength',
-                    'extinction_coefficient',
+                    "transmittance",
+                    "absorbance",
+                    "wavelength",
+                    "extinction_coefficient",
                 ],
                 visible=Filter(
                     exclude=[
-                        'array_index',
+                        "array_index",
                     ],
                 ),
                 hide=[
@@ -106,15 +95,14 @@ class MyExampleClass(ArchiveSection):
                     "location",
                     "lab_id",
                 ],
-            )
+            ),
         ),
     )
 
     name = Quantity(
         type=str,
-        description='The name of the heater',
+        description="The name of the heater",
     )
     temperature = SubSection(
         section_def=HeaterTemperature,
     )
-

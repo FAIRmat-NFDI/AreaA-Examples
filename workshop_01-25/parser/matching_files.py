@@ -20,11 +20,10 @@
 from nomad.config.models.plugins import ParserEntryPoint
 
 
-
-
 #
 # https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py
 #
+
 
 class XRDParserEntryPoint(ParserEntryPoint):
     def load(self):
@@ -34,10 +33,10 @@ class XRDParserEntryPoint(ParserEntryPoint):
 
 
 parser = XRDParserEntryPoint(
-    name='XRD Parser',
-    description='Parser for several kinds of raw files from XRD measurements.',
-    mainfile_name_re=r'^.*\.xrdml$|^.*\.rasx$|^.*\.brml$',
-    mainfile_mime_re='text/.*|application/zip',
+    name="XRD Parser",
+    description="Parser for several kinds of raw files from XRD measurements.",
+    mainfile_name_re=r"^.*\.xrdml$|^.*\.rasx$|^.*\.brml$",
+    mainfile_mime_re="text/.*|application/zip",
 )
 
 
@@ -58,7 +57,7 @@ class HallMeasurementParserEntryPoint(ParserEntryPoint):
 measurement_parser = HallMeasurementParserEntryPoint(
     name="HallMeasurementsParser",
     description="Parse Hall measurement file from Lakeshore.",
-    mainfile_name_re='.+\.txt',
+    mainfile_name_re=".+\.txt",
     mainfile_mime_re="(?:text/plain|application/x-wine-extension-ini)",
     mainfile_contents_re=r"(?s)\[Sample parameters\].*?\[Measurements\]",
 )
@@ -68,6 +67,7 @@ measurement_parser = HallMeasurementParserEntryPoint(
 # https://github.com/IKZ-Berlin/nomad-ikz-plugin/blob/main/src/nomad_ikz_plugin/movpe/movpe1/growth_excel/__init__.py
 #
 
+
 class Movpe1ParserEntryPoint(ParserEntryPoint):
     def load(self):
         from nomad_ikz_plugin.movpe.movpe1.growth_excel.parser import ParserMovpe1IKZ
@@ -76,15 +76,15 @@ class Movpe1ParserEntryPoint(ParserEntryPoint):
 
 
 parser = Movpe1ParserEntryPoint(
-    name='Movpe1Parser',
-    description='Parse excel files containing growth process parameters logged manually.',
-    mainfile_name_re=r'.+\.xlsx',
-    mainfile_mime_re=r'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    name="Movpe1Parser",
+    description="Parse excel files containing growth process parameters logged manually.",
+    mainfile_name_re=r".+\.xlsx",
+    mainfile_mime_re=r"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     mainfile_contents_dict={
-        'Deposition Control': {
-            '__has_all_keys': ['Constant Parameters ID', 'Sample ID', 'Date', 'number']
+        "Deposition Control": {
+            "__has_all_keys": ["Constant Parameters ID", "Sample ID", "Date", "number"]
         },
-        'Precursors': {'__has_all_keys': ['Sample ID']},
-        '__has_comment': '#',
+        "Precursors": {"__has_all_keys": ["Sample ID"]},
+        "__has_comment": "#",
     },
 )

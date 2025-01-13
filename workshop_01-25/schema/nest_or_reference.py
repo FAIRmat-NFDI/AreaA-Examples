@@ -1,4 +1,3 @@
-
 from nomad.datamodel.metainfo.annotations import (
     ELNAnnotation,
 )
@@ -27,10 +26,10 @@ class PyrometryReference(SectionReference):
 
     reference = Quantity(
         type=Pyrometry,
-        description='A reference to a NOMAD `Pyrometry` entry.',
+        description="A reference to a NOMAD `Pyrometry` entry.",
         a_eln=ELNAnnotation(
-            component='ReferenceEditQuantity',
-            label='Pyrometry Reference',
+            component="ReferenceEditQuantity",
+            label="Pyrometry Reference",
         ),
     )
 
