@@ -29,7 +29,6 @@ if TYPE_CHECKING:
 
 from nomad.datamodel.datamodel import EntryArchive
 from nomad.parsing import MatchingParser
-from nomad.parsing.parser import MatchingParser
 from pdi_nomad_plugin.utils import (
     create_archive,
 )

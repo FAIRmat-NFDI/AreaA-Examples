@@ -29,7 +29,6 @@ if TYPE_CHECKING:
 
 from nomad.datamodel.datamodel import EntryArchive
 from nomad.parsing import MatchingParser
-from nomad.parsing.parser import MatchingParser
 
 from nomad_aa_plugin.schema_packages.schema_package import MyClassOne
 
