@@ -18,7 +18,6 @@
 
 
 from nomad.config.models.plugins import ParserEntryPoint
-from pydantic import Field
 
 
 
@@ -89,8 +88,3 @@ parser = Movpe1ParserEntryPoint(
         '__has_comment': '#',
     },
 )
-
-
-
-
-
