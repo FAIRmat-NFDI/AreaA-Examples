@@ -28,18 +28,22 @@ class MyClassOneHDF5(EntryData, ArchiveSection):
 
     m_def = Section(a_h5web=H5WebAnnotation(axes="my_time", signal="my_value"))
 
-    my_name = Quantity(
+    name = Quantity(
         type=str,
         a_eln=ELNAnnotation(
             component="StringEditQuantity",
         ),
     )
 
+    # thid quantity will be only a reference to some dataset in the hdf5 file
+    # no shape and no unit are needed
     my_value = Quantity(
         type=HDF5Reference,
         shape=[],
     )
 
+    # thid quantity will be only a reference to some dataset in the hdf5 file
+    # no shape and no unit are needed
     my_time = Quantity(
         type=HDF5Reference,
         shape=[],
@@ -54,12 +58,12 @@ class MyClassTwoHDF5(EntryData, ArchiveSection):
     m_def = Section(
         a_h5web=H5WebAnnotation(
             paths=[
-                "my_class_one/*",
+                "my_class_one/*",  # this is a wildcard, it will match all the datasets in the group
             ]
         ),
     )
 
-    my_name = Quantity(
+    name = Quantity(
         type=str,
         a_eln=ELNAnnotation(
             component="StringEditQuantity",

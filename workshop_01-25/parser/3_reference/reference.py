@@ -22,26 +22,35 @@ from typing import (
 
 import pandas as pd
 
+# The if TYPE_CHECKING: statement is a special construct provided by the typing module. 
+# It allows you to include imports that are only necessary for type hinting and static analysis, 
+# without actually importing those modules at runtime.
 if TYPE_CHECKING:
     from nomad.datamodel.datamodel import (
         EntryArchive,
+    )
+    from structlog.stdlib import (
+        BoundLogger,
     )
 
 from nomad.datamodel.datamodel import EntryArchive
 from nomad.parsing import MatchingParser
 from nomad.utils import hash
+
+# copy the code from here: https://github.com/PDI-Berlin/pdi-nomad-plugin/blob/main/src/pdi_nomad_plugin/utils.py
 from pdi_nomad_plugin.utils import (
     create_archive,
 )
 
+# find these classes in the schema/schema_packages python file
 from nomad_aa_plugin.schema_packages.schema_package import MyClassFive, MyClassOne
 
 class MyParserThree(MatchingParser):
     def parse(
         self,
-        mainfile: str,
-        archive: EntryArchive,
-        logger,
+        mainfile: str, # expliciting the type of the variable required makes it easier to understand the code
+        archive: EntryArchive, # expliciting the type of the variable required makes it easier to understand the code
+        logger: 'BoundLogger', # expliciting the type of the variable required makes it easier to understand the code
     ) -> None:
         
         df_csv = pd.read_csv(mainfile, sep=",")  # , decimal=',', engine='python')
@@ -49,31 +58,31 @@ class MyParserThree(MatchingParser):
         # create archive function accepts either yaml or json as filetype
         filetype = "yaml"
 
-        # filenames used later to create the archives
-        main_archive_filename = f"main.archive.{filetype}"
-        test_filename = f"test.archive.{filetype}"
+        my_name = "And child archive"
+        my_new_name = "And new child archive"
 
-        # EntryArchive is the root class that is used to store the data of the archive
-        main_archive = EntryArchive()
+        # this variable contains the root class of the archive EntryArchive that we will fill in
+        child_archive = EntryArchive()
 
         # the class filled in the "data" section must be an EntryData class
-        main_archive.data = MyClassFive(
-            name="experiment",
+        child_archive.data = MyClassFive(
+            name=my_name,
         )
 
-        # EntryArchive is the root class that is used to store the data of the archive
-        new_archive = EntryArchive()
+        # this variable contains the root class of the archive EntryArchive that we will fill in
+        new_child_archive = EntryArchive()
 
         # the class filled in the "data" section must be an EntryData class
-        new_archive.data = MyClassOne(
-            my_name="stuff to be referenced",
+        new_child_archive.data = MyClassOne(
+            name=my_new_name,
             my_value=df_csv["ValueThree"],
             my_time=df_csv["ValueThree2"],
         )
 
+        test_filename = f"test.archive.{filetype}"
         # copy-paste the code from the plugin where this is imported
         create_archive(
-            new_archive.m_to_dict(),
+            new_child_archive.m_to_dict(),
             archive.m_context,
             test_filename,
             filetype,
@@ -88,11 +97,12 @@ class MyParserThree(MatchingParser):
         # so we can take it and use it to create the reference string
         upload_id = archive.m_context.upload_id
 
-        main_archive.data.reference = f"../uploads/{upload_id}/archive/{entry_id}#data"
+        child_archive.data.reference = f"../uploads/{upload_id}/archive/{entry_id}#data"
 
+        main_archive_filename = f"main.archive.{filetype}"
         # the create archive returns automatically the reference string, so one can use directly the return value
         create_archive(
-            main_archive.m_to_dict(),
+            child_archive.m_to_dict(),
             archive.m_context,
             main_archive_filename,
             filetype,
@@ -105,3 +115,9 @@ class MyParserThree(MatchingParser):
         archive.data = MyClassFive()
         archive.data.name = "My namy name"
         archive.data.reference = f"../uploads/{upload_id}/archive/{entry_id}#data"
+
+        # make use of the logger so you will see these messages in the log lane of your Entry in the GUI
+        logger.info(f"Alles Gut")
+        logger.warn(f"Some warny warn")
+        if 1 < 0:
+            logger.error(f"Something went wrong")
