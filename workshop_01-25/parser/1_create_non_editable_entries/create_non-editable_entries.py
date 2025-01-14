@@ -22,8 +22,8 @@ from typing import (
 
 import pandas as pd
 
-# The if TYPE_CHECKING: statement is a special construct provided by the typing module. 
-# It allows you to include imports that are only necessary for type hinting and static analysis, 
+# The if TYPE_CHECKING: statement is a special construct provided by the typing module.
+# It allows you to include imports that are only necessary for type hinting and static analysis,
 # without actually importing those modules at runtime.
 if TYPE_CHECKING:
     from nomad.datamodel.datamodel import (
@@ -43,17 +43,16 @@ from nomad_aa_plugin.schema_packages.schema_package import MyClassOne
 class MyParserOne(MatchingParser):
     def parse(
         self,
-        mainfile: str, # expliciting the type of the variable required makes it easier to understand the code
-        archive: EntryArchive, # expliciting the type of the variable required makes it easier to understand the code
-        logger: 'BoundLogger', # expliciting the type of the variable required makes it easier to understand the code
+        mainfile: str,  # expliciting the type of the variable required makes it easier to understand the code
+        archive: EntryArchive,  # expliciting the type of the variable required makes it easier to understand the code
+        logger: "BoundLogger",  # expliciting the type of the variable required makes it easier to understand the code
     ) -> None:
-        
         df_csv = pd.read_csv(mainfile, sep=",")  # , decimal=',', engine='python')
 
         my_name = "And"
 
-        # This "archive" variable is the parse function argument, 
-        # it is the archive that will be written to the archive folder 
+        # This "archive" variable is the parse function argument,
+        # it is the archive that will be written to the archive folder
         # (not in the raw folder like those created with create_archive function in next examples)
         # This archive will give rise to a non editable entry.
         # it's type is already EntryArchive, so we only need to define it's data section
@@ -65,7 +64,7 @@ class MyParserOne(MatchingParser):
         archive.data.my_time = df_csv["Value2"]
 
         # make use of the logger so you will see these messages in the log lane of your Entry in the GUI
-        logger.info(f"Alles Gut")
-        logger.warn(f"Some warny warn")
+        logger.info("Alles Gut")
+        logger.warn("Some warny warn")
         if 1 < 0:
-            logger.error(f"Something went wrong")
+            logger.error("Something went wrong")

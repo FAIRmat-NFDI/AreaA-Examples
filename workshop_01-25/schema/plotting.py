@@ -74,9 +74,9 @@ class MyClassOne(PlotSection, EntryData):
     my_name = Quantity(
         type=str,
         a_eln=ELNAnnotation(
-            component='StringEditQuantity',
+            component="StringEditQuantity",
         ),
-    ) 
+    )
 
     my_value = Quantity(
         type=float,

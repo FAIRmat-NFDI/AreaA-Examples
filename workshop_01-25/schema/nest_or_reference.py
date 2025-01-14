@@ -22,7 +22,9 @@ from pdi_nomad_plugin.characterization.schema import (
 m_package = SchemaPackage()
 
 
-class PyrometryReference(SectionReference): # SectionReference is a besesection contained in packages/nomad-FAIR/nomad/datamodel/metainfo/basesections.py
+class PyrometryReference(
+    SectionReference
+):  # SectionReference is a besesection contained in packages/nomad-FAIR/nomad/datamodel/metainfo/basesections.py
     """
     A section used for referencing a pyrometry.
     """
