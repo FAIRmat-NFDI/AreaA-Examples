@@ -29,46 +29,25 @@ if TYPE_CHECKING:
 
 from nomad.datamodel.datamodel import EntryArchive
 from nomad.parsing import MatchingParser
-from pdi_nomad_plugin.utils import (
-    create_archive,
-)
 
-from nomad_aa_plugin.schema_packages.schema_package import MyClassOne, MyClassTwo
+from nomad_aa_plugin.schema_packages.schema_package import MyClassOne
 
 
-class MyParserTwo(MatchingParser):
+class MyParserOne(MatchingParser):
     def parse(
         self,
         mainfile: str,
         archive: EntryArchive,
         logger,
     ) -> None:
+        
         df_csv = pd.read_csv(mainfile, sep=",")  # , decimal=',', engine='python')
 
+        # This archive is the parse function argument, so it is the archive that will be written to the archive folder 
+        # (not in the raw folder like those created with create_archive function)
+        # This archive will give rise to a non editable entry.
         archive.data = MyClassOne()
 
-        child_archive = EntryArchive()
-
-        my_name = "And"
-        filetype = "yaml"
-
-        example_filename = f"{my_name}.archive.{filetype}"
-
-        child_archive.data = MyClassTwo()
-        child_archive.data.my_name = f"{my_name}"
-        child_archive.data.my_class_one = []
-
-        child_archive.data.my_class_one.append(MyClassOne())
-
-        child_archive.data.my_class_one[0].my_value = df_csv["Value"]
-        child_archive.data.my_class_one[0].my_time = df_csv["Value2"]
-
-        create_archive(
-            child_archive.m_to_dict(),
-            archive.m_context,
-            example_filename,
-            filetype,
-            logger,
-        )
-
-        archive.data = MyClassOne()
+        # we fill in values depending on the ones available in the schema
+        archive.data.my_value = df_csv["Value"]
+        archive.data.my_time = df_csv["Value2"]

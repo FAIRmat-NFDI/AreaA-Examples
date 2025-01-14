@@ -62,11 +62,9 @@ measurement_parser = HallMeasurementParserEntryPoint(
     mainfile_contents_re=r"(?s)\[Sample parameters\].*?\[Measurements\]",
 )
 
-
 #
 # https://github.com/IKZ-Berlin/nomad-ikz-plugin/blob/main/src/nomad_ikz_plugin/movpe/movpe1/growth_excel/__init__.py
 #
-
 
 class Movpe1ParserEntryPoint(ParserEntryPoint):
     def load(self):

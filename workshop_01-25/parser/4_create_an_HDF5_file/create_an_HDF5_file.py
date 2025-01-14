@@ -58,8 +58,8 @@ class MyParserFour(MatchingParser):
         df_csv = pd.read_csv(mainfile, sep=',') #, decimal=',', engine='python')
     
         child_archives = {
-            'experiment': EntryArchive(),
-            'instrument': EntryArchive(),
+            #'experiment': EntryArchive(),
+            #'instrument': EntryArchive(),
             'process': EntryArchive(),
         }
 
@@ -80,12 +80,14 @@ class MyParserFour(MatchingParser):
 
         child_archives['process'].data = MyClassTwoHDF5()
         child_archives['process'].data.my_name = f'{my_name}'
-        child_archives['process'].data.my_class_one = []
 
-        child_archives['process'].data.my_class_one.append(MyClassOneHDF5())
+        my_class_one_subsec = MyClassOneHDF5()
+        my_class_one_subsec.my_value = f'/uploads/{archive.m_context.upload_id}/raw/{hdf_filename}#/{group_name}/value'
+        my_class_one_subsec.my_time = f'/uploads/{archive.m_context.upload_id}/raw/{hdf_filename}#/{group_name}/time'
 
-        child_archives['process'].data.my_class_one[0].my_value = f'/uploads/{archive.m_context.upload_id}/raw/{hdf_filename}#/{group_name}/value'
-        child_archives['process'].data.my_class_one[0].my_time = f'/uploads/{archive.m_context.upload_id}/raw/{hdf_filename}#/{group_name}/time'
+        # check which args the function m_add_subsection accepts: packages/nomad-FAIR/nomad/metainfo/metainfo.py
+        # DO NOT use list.append() to add a subsection to a section!
+        child_archives['process'].data.m_add_sub_section(MyClassTwoHDF5.my_class_one, my_class_one_subsec)
 
         # other code ....
 

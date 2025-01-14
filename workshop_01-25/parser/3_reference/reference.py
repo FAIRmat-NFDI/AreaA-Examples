@@ -36,7 +36,6 @@ from pdi_nomad_plugin.utils import (
 
 from nomad_aa_plugin.schema_packages.schema_package import MyClassFive, MyClassOne
 
-
 class MyParserThree(MatchingParser):
     def parse(
         self,
@@ -44,24 +43,35 @@ class MyParserThree(MatchingParser):
         archive: EntryArchive,
         logger,
     ) -> None:
+        
         df_csv = pd.read_csv(mainfile, sep=",")  # , decimal=',', engine='python')
 
+        # create archive function accepts either yaml or json as filetype
         filetype = "yaml"
+
+        # filenames used later to create the archives
         main_archive_filename = f"main.archive.{filetype}"
         test_filename = f"test.archive.{filetype}"
 
+        # EntryArchive is the root class that is used to store the data of the archive
         main_archive = EntryArchive()
+
+        # the class filled in the "data" section must be an EntryData class
         main_archive.data = MyClassFive(
             name="experiment",
         )
 
+        # EntryArchive is the root class that is used to store the data of the archive
         new_archive = EntryArchive()
+
+        # the class filled in the "data" section must be an EntryData class
         new_archive.data = MyClassOne(
             my_name="stuff to be referenced",
             my_value=df_csv["ValueThree"],
             my_time=df_csv["ValueThree2"],
         )
 
+        # copy-paste the code from the plugin where this is imported
         create_archive(
             new_archive.m_to_dict(),
             archive.m_context,
@@ -70,11 +80,17 @@ class MyParserThree(MatchingParser):
             logger,
         )
 
+        # hash function is not the python native one! It is imported from nomad.utils
+        # it always generates an entry_id from upload_id and filename
         entry_id = hash(archive.m_context.upload_id, test_filename)
+
+        # we use the fact that the archive passed to the parse function will have already an upload id defined
+        # so we can take it and use it to create the reference string
         upload_id = archive.m_context.upload_id
 
         main_archive.data.reference = f"../uploads/{upload_id}/archive/{entry_id}#data"
 
+        # the create archive returns automatically the reference string, so one can use directly the return value
         create_archive(
             main_archive.m_to_dict(),
             archive.m_context,
@@ -83,6 +99,9 @@ class MyParserThree(MatchingParser):
             logger,
         )
 
+        # This archive is the parse function argument, so it is the archive that will be written to the archive folder 
+        # (not in the raw folder like those created with create_archive function)
+        # This archive will give rise to a non editable entry.
         archive.data = MyClassFive()
         archive.data.name = "My namy name"
         archive.data.reference = f"../uploads/{upload_id}/archive/{entry_id}#data"

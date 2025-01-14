@@ -1,0 +1,1 @@
+keycloak:\n  realm_name: "fairdi_nomad_test"
