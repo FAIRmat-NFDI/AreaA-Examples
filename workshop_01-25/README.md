@@ -44,7 +44,7 @@ The workshop is based on practical sessions that will guide users through some t
 
 ---
 
-## Training materials:
+## Training materials
 
 A brief explanation for each file or link provided in this folder is provided below.
 
@@ -52,57 +52,47 @@ Each python file is not meant to be a standalone script to execute, rather to co
 
 ### Schema
 
-#### m_def attribute
+* m_def attribute:
+  Get started with definition of your classes. Few examples of commonly used `m_def` attributes accross existing plugins are provided.
 
-Get started with definition of your classes. Few examples of commonly used `m_def` attributes accross existing plugins are provided.
+* Nest or reference:
+  Data modeling strategies, composition in the same archive or in different archives.
 
-#### Nest or reference
-
-Data modeling strategies: composition in the same archive or in different archives.
-
-#### Plotting
-
-Several ways of getting to plot data are included in this file
+* Plotting:
+  Several ways of getting to plot data are included in this file
 
 ### Parser
 
-#### Create non editable entries
+* Create non editable entries:
+  Entries will end up as binary files in the `archive` folder. They cannot be modified! Do not use `EditQuantity` annotations in the schema.
 
-Entries will end up as binary files in the `archive` folder. They cannot be modified! Do not use `EditQuantity` annotations in the schema.
+* Create editable entries:
+  Entries will end up as plain text files in the `raw` folder. They can be modified.
 
-#### Create editable entries
+* Matching files:
+  The snippet of code instructung a parser how to match a file will be included in the `__init__.py` file.
+  Some remarkable matching patterns:
+  * [Match a zip file](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
+  * [Stack multiple file names](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
+  * [Stack multiple file mimetypes](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
+  * [Stack multiple file mimetypes - 2](https://github.com/IKZ-Berlin/lakeshore-nomad-plugin/blob/main/src/lakeshore_nomad_plugin/hall/measurement_parser/__init__.py)
+  * [wide xlsx file matching](https://github.com/IKZ-Berlin/nomad-ikz-plugin/blob/main/src/nomad_ikz_plugin/movpe/movpe1/growth_excel/__init__.py)
 
-Entries will end up as plain text files in the `raw` folder. They can be modified.
+* Handling a reference:
+  Create a reference to an entry and place it in another entry.
 
-#### Matching files
-
-The snippet of code instructung a parser how to match a file will be included in the `__init__.py` file.
-
-Some remarkable matching patterns:
-
-* [Match a zip file](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
-* [Stack multiple file names](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
-* [Stack multiple file mimetypes](https://github.com/FAIRmat-NFDI/nomad-measurements/blob/main/src/nomad_measurements/xrd/__init__.py)
-* [Stack multiple file mimetypes - 2](https://github.com/IKZ-Berlin/lakeshore-nomad-plugin/blob/main/src/lakeshore_nomad_plugin/hall/measurement_parser/__init__.py)
-* [wide xlsx file matching](https://github.com/IKZ-Berlin/nomad-ikz-plugin/blob/main/src/nomad_ikz_plugin/movpe/movpe1/growth_excel/__init__.py)
-
-#### Handling a reference
-
-Create a reference to an entry and place it in another entry.
-
-#### Create an HDF5 file
-
-Handle HDF5 files creation.
+* Create an HDF5 file:
+  Handle HDF5 files creation.
 
 ### App
 
-#### Example app
-
-An app is a dashboard in the search panel that will allow to filter and show important data for you. There are many customization available in the [official NOMAD documentation](https://nomad-lab.eu/prod/v1/staging/docs/howto/plugins/apps.html#how-to-write-an-app).
+* Example app:
+  An app is a dashboard in the search panel that will allow to filter and show important data for you. There are many customization available in the [official NOMAD documentation](https://nomad-lab.eu/prod/v1/staging/docs/howto/plugins/apps.html#how-to-write-an-app).
 
 ### Jupyter Notebook
 
-Bayesian Optimization HPT Example Upload Notebook is accessible from the `Example Uploads`. Navigate to https://nomad-lab.eu/prod/v1/oasis/gui/user/uploads and click on `Uploads > Create Example Uploads`
+* Bayesian Optimization HPT Example Upload:
+  This notebook is accessible from the `Example Uploads`. Navigate to https://nomad-lab.eu/prod/v1/oasis/gui/user/uploads and click on `Uploads > Create Example Uploads`
 
 ## Glossary
 
