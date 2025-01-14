@@ -71,7 +71,7 @@ class MyClassOne(PlotSection, EntryData):
         },
     )
 
-    my_name = Quantity(
+    name = Quantity(
         type=str,
         a_eln=ELNAnnotation(
             component="StringEditQuantity",
@@ -132,7 +132,7 @@ class MyClassTwo(EntryData, ArchiveSection):
         ],
     )
 
-    my_name = Quantity(
+    name = Quantity(
         type=str,
         a_eln=ELNAnnotation(
             component="StringEditQuantity",

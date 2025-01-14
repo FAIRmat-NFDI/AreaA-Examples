@@ -88,7 +88,7 @@ All the following functionalities are implemented within a single plugin availab
 
 * Units
   Use the `pint` package that is internally adopted to handle units.
-  To know which are the available units, check the file `nomad-FAIR/nomad/units/default_en.txt` in the nomad-FAIR repo
+  To know which are the available units, check the file `nomad-FAIR/nomad/units/default_en.txt` in the nomad-FAIR repo.
 
 ### App
 
