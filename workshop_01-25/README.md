@@ -50,6 +50,8 @@ A brief explanation for each file or link provided in this folder is provided be
 
 Each python file is not meant to be a standalone script to execute, rather to contain a snippet of code, complemented with the necessary import statements, ready to be included into your own plugin package code. Three folders are available, namely __schema__ and __parser__ and __app__.
 
+All the following functionalities are implemented within a single plugin available here: `https://github.com/aalbino2/nomad-aa-plugin`.
+
 ### Schema
 
 * m_def attribute:
@@ -83,6 +85,10 @@ Each python file is not meant to be a standalone script to execute, rather to co
 
 * Create an HDF5 file:
   Handle HDF5 files creation.
+
+* Units
+  Use the `pint` package that is internally adopted to handle units.
+  To know which are the available units, check the file `nomad-FAIR/nomad/units/default_en.txt` in the nomad-FAIR repo
 
 ### App
 
